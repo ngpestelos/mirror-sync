@@ -1,0 +1,98 @@
+name: Sync mirrors
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+    inputs:
+      dest:
+        description: dest name (empty = all)
+        required: false
+        default: ""
+permissions:
+  contents: read
+concurrency:
+  group: sync-mirrors-${{ github.event.inputs.dest || 'all' }}
+  cancel-in-progress: false
+
+jobs:
+  matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      include: ${{ steps.set.outputs.include }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: set
+        env:
+          ONLY: ${{ github.event.inputs.dest || '' }}
+        run: |
+          python3 - << 'PY'
+          import json, os, pathlib, sys
+          only = os.environ.get("ONLY", "").strip()
+          text = pathlib.Path("mirrors.yml").read_text()
+          rows = []
+          cur = {}
+          for line in text.splitlines():
+              s = line.strip()
+              if s.startswith("- dest:"):
+                  if cur:
+                      rows.append(cur)
+                  cur = {"dest": s.split(":", 1)[1].strip()}
+              elif s.startswith("src:") and cur:
+                  cur["src"] = s.split(":", 1)[1].strip()
+              elif s.startswith("default:") and cur:
+                  cur["default"] = s.split(":", 1)[1].strip()
+              elif s.startswith("timeout:") and cur:
+                  cur["timeout"] = int(s.split(":", 1)[1].strip())
+          if cur:
+              rows.append(cur)
+          if only:
+              rows = [r for r in rows if r["dest"] == only]
+              if not rows:
+                  print(f"FAIL dest not in mirrors.yml: {only}", file=sys.stderr)
+                  sys.exit(1)
+              if not all(c.isalnum() or c in "-_." for c in only):
+                  print("FAIL dest name not allowlisted charset", file=sys.stderr)
+                  sys.exit(1)
+          include = [
+              {
+                  "dest": r["dest"],
+                  "src": r["src"],
+                  "default": r["default"],
+                  "timeout": r.get("timeout", 60),
+              }
+              for r in rows
+          ]
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as fh:
+              fh.write("include=" + json.dumps(include, separators=(",", ":")) + "\n")
+          print(f"jobs={len(include)}")
+          PY
+
+  sync:
+    needs: matrix
+    if: needs.matrix.outputs.include != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: ${{ matrix.timeout }}
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        include: ${{ fromJSON(needs.matrix.outputs.include) }}
+    concurrency:
+      group: sync-dest-${{ matrix.dest }}
+      cancel-in-progress: true
+    env:
+      MIRROR_PUSH_TOKEN: ${{ secrets.MIRROR_PUSH_TOKEN }}
+      GH_TOKEN: ${{ secrets.MIRROR_PUSH_TOKEN }}
+      DEST: ${{ matrix.dest }}
+      SRC: ${{ matrix.src }}
+      DEF: ${{ matrix.default }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Token present
+        run: |
+          if [[ -z "${MIRROR_PUSH_TOKEN}" ]]; then
+            echo "FAIL MIRROR_PUSH_TOKEN empty" >&2
+            exit 1
+          fi
+      - name: Sync ${{ matrix.dest }}
+        run: bash scripts/sync-one.sh

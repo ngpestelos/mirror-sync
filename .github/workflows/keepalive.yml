@@ -1,0 +1,26 @@
+name: Keepalive
+on:
+  schedule:
+    - cron: "0 5 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Touch keepalive/LAST
+        run: |
+          set -euo pipefail
+          mkdir -p keepalive
+          date -u +%Y%m%dT%H%M%SZ > keepalive/LAST
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add keepalive/LAST
+          if git diff --cached --quiet; then
+            echo "no change"
+            exit 0
+          fi
+          git commit -m "chore: keepalive $(date -u +%Y%m%d)"
+          git push

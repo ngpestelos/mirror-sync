@@ -1,0 +1,853 @@
+# Generated from harvest 20260820. Default branch is UPSTREAM.
+# dests=170 generated=20260819T235601Z
+mirrors:
+  - dest: active_merchant
+    src: activemerchant/active_merchant
+    default: master
+    timeout: 60
+    private: false
+  - dest: activeadmin
+    src: activeadmin/activeadmin
+    default: master
+    timeout: 60
+    private: false
+  - dest: administrate
+    src: thoughtbot/administrate
+    default: main
+    timeout: 60
+    private: false
+  - dest: airbrake
+    src: airbrake/airbrake
+    default: master
+    timeout: 60
+    private: false
+  - dest: algorithms-nutshell-2ed
+    src: heineman/algorithms-nutshell-2ed
+    default: master
+    timeout: 60
+    private: false
+  - dest: ANE
+    src: maderix/ANE
+    default: main
+    timeout: 60
+    private: false
+  - dest: ansible
+    src: ansible/ansible
+    default: devel
+    timeout: 120
+    private: false
+  - dest: anthropic-cookbook
+    src: anthropics/claude-cookbooks
+    default: main
+    timeout: 60
+    private: false
+  - dest: anthropic-courses
+    src: anthropics/courses
+    default: master
+    timeout: 60
+    private: false
+  - dest: anxs-postgresql
+    src: ANXS/postgresql
+    default: master
+    timeout: 60
+    private: false
+  - dest: ar-tsvectors
+    src: bengler/ar-tsvectors
+    default: master
+    timeout: 60
+    private: true
+  - dest: are-we-there-yet
+    src: AndyObtiva/are-we-there-yet
+    default: master
+    timeout: 60
+    private: false
+  - dest: atlantis-demo
+    src: terraform-aws-modules/atlantis-demo
+    default: master
+    timeout: 60
+    private: false
+  - dest: atom
+    src: atom/atom
+    default: master
+    timeout: 120
+    private: false
+  - dest: awesome_nested_set
+    src: collectiveidea/awesome_nested_set
+    default: main
+    timeout: 60
+    private: true
+  - dest: aws-codepipeline-codedeploy-continuous-delivery
+    src: pluralsight-cloud/aws-codepipeline-codedeploy-continuous-delivery
+    default: main
+    timeout: 60
+    private: false
+  - dest: aws-terraform-examples
+    src: renehernandez/aws-terraform-examples
+    default: master
+    timeout: 60
+    private: false
+  - dest: axlsx
+    src: randym/axlsx
+    default: master
+    timeout: 60
+    private: true
+  - dest: basecamp-handbook
+    src: basecamp/handbook
+    default: master
+    timeout: 60
+    private: false
+  - dest: baseimage-docker
+    src: phusion/baseimage-docker
+    default: master
+    timeout: 60
+    private: false
+  - dest: bigdecimal
+    src: ruby/bigdecimal
+    default: master
+    timeout: 60
+    private: false
+  - dest: bloomberg-beta-manual
+    src: Bloomberg-Beta/Manual
+    default: main
+    timeout: 60
+    private: false
+  - dest: book-helloworld
+    src: gshipley/book-helloworld
+    default: master
+    timeout: 60
+    private: false
+  - dest: brakeman
+    src: presidentbeef/brakeman
+    default: main
+    timeout: 60
+    private: false
+  - dest: camofox-browser
+    src: jo-inc/camofox-browser
+    default: master
+    timeout: 60
+    private: false
+  - dest: capistrano
+    src: capistrano/capistrano
+    default: master
+    timeout: 60
+    private: false
+  - dest: chruby
+    src: postmodern/chruby
+    default: master
+    timeout: 60
+    private: false
+  - dest: container-openldap
+    src: osixia/container-openldap
+    default: main
+    timeout: 60
+    private: false
+  - dest: coreos-cloudinit
+    src: coreos/coreos-cloudinit
+    default: master
+    timeout: 60
+    private: false
+  - dest: coreos-docs
+    src: coreos/docs
+    default: master
+    timeout: 60
+    private: false
+  - dest: couchdb
+    src: apache/couchdb
+    default: main
+    timeout: 60
+    private: false
+  - dest: couchrest
+    src: couchrest/couchrest
+    default: master
+    timeout: 60
+    private: false
+  - dest: crass
+    src: rgrove/crass
+    default: main
+    timeout: 60
+    private: true
+  - dest: daisy
+    src: HBRGTech/daisy
+    default: master
+    timeout: 60
+    private: false
+  - dest: devise
+    src: heartcombo/devise
+    default: main
+    timeout: 60
+    private: false
+  - dest: devise_invitable
+    src: scambra/devise_invitable
+    default: master
+    timeout: 60
+    private: false
+  - dest: distsys-class
+    src: aphyr/distsys-class
+    default: master
+    timeout: 60
+    private: false
+  - dest: docker-gitlab-ci-multi-runner
+    src: sameersbn/docker-gitlab-ci-multi-runner
+    default: master
+    timeout: 60
+    private: false
+  - dest: docker-nginx-ssl-secure
+    src: MarvAmBass/docker-nginx-ssl-secure
+    default: master
+    timeout: 60
+    private: false
+  - dest: docker-syncthing
+    src: istepanov/docker-syncthing
+    default: master
+    timeout: 60
+    private: false
+  - dest: doctl
+    src: digitalocean/doctl
+    default: main
+    timeout: 60
+    private: false
+  - dest: errbit
+    src: errbit/errbit
+    default: main
+    timeout: 60
+    private: false
+  - dest: gumbo-parser
+    src: google/gumbo-parser
+    default: master
+    timeout: 60
+    private: false
+  - dest: headroom
+    src: chopratejas/headroom
+    default: main
+    timeout: 60
+    private: true
+  - dest: hermes-agent
+    src: NousResearch/hermes-agent
+    default: main
+    timeout: 60
+    private: false
+  - dest: HowToBeAProgrammer
+    src: braydie/HowToBeAProgrammer
+    default: master
+    timeout: 60
+    private: false
+  - dest: hpricot
+    src: hpricot/hpricot
+    default: master
+    timeout: 60
+    private: false
+  - dest: income-tax
+    src: rkh/income-tax
+    default: master
+    timeout: 60
+    private: false
+  - dest: inherited_resources
+    src: activeadmin/inherited_resources
+    default: master
+    timeout: 60
+    private: false
+  - dest: jekyll-foundation
+    src: Foundation-for-Jekyll-sites/jekyll-foundation
+    default: master
+    timeout: 60
+    private: false
+  - dest: jello-server
+    src: chriskottom/jello-server
+    default: master
+    timeout: 60
+    private: false
+  - dest: jruby
+    src: jruby/jruby
+    default: master
+    timeout: 60
+    private: false
+  - dest: kubernetes
+    src: kubernetes/kubernetes
+    default: master
+    timeout: 360
+    private: true
+  - dest: lanyon
+    src: poole/lanyon
+    default: master
+    timeout: 60
+    private: false
+  - dest: legal-skills
+    src: gfodor/legal-skills
+    default: main
+    timeout: 60
+    private: true
+  - dest: lenfi-sdk
+    src: lenfiLabs/lenfi-sdk
+    default: main
+    timeout: 60
+    private: true
+  - dest: lenfi-smart-contracts
+    src: lenfiLabs/lenfi-smart-contracts
+    default: main
+    timeout: 60
+    private: true
+  - dest: llama.cpp
+    src: ggerganov/llama.cpp
+    default: master
+    timeout: 60
+    private: false
+  - dest: loofah
+    src: flavorjones/loofah
+    default: main
+    timeout: 60
+    private: true
+  - dest: mac-dev-playbook
+    src: geerlingguy/mac-dev-playbook
+    default: master
+    timeout: 60
+    private: false
+  - dest: mail
+    src: mikel/mail
+    default: master
+    timeout: 60
+    private: false
+  - dest: mal
+    src: kanaka/mal
+    default: master
+    timeout: 60
+    private: false
+  - dest: marcel
+    src: rails/marcel
+    default: main
+    timeout: 60
+    private: true
+  - dest: materials
+    src: lenfiLabs/materials
+    default: main
+    timeout: 60
+    private: true
+  - dest: mattpocock-skills
+    src: mattpocock/skills
+    default: main
+    timeout: 60
+    private: false
+  - dest: meta
+    src: terraform-aws-modules/meta
+    default: master
+    timeout: 60
+    private: false
+  - dest: mimemagic
+    src: mimemagicrb/mimemagic
+    default: master
+    timeout: 60
+    private: false
+  - dest: mini_mime
+    src: discourse/mini_mime
+    default: main
+    timeout: 60
+    private: true
+  - dest: monocle
+    src: maccman/monocle
+    default: master
+    timeout: 60
+    private: false
+  - dest: nio4r
+    src: socketry/nio4r
+    default: main
+    timeout: 60
+    private: false
+  - dest: nokogiri
+    src: sparklemotion/nokogiri
+    default: main
+    timeout: 60
+    private: true
+  - dest: oath-generators
+    src: halogenandtoast/oath-generators
+    default: master
+    timeout: 60
+    private: false
+  - dest: oc-cluster-wrapper
+    src: openshift-evangelists/oc-cluster-wrapper
+    default: master
+    timeout: 60
+    private: false
+  - dest: omniauth-facebook
+    src: simi/omniauth-facebook
+    default: master
+    timeout: 60
+    private: false
+  - dest: openai-quickstart-python
+    src: openai/openai-quickstart-python
+    default: master
+    timeout: 60
+    private: false
+  - dest: openclaw
+    src: openclaw/openclaw
+    default: main
+    timeout: 60
+    private: false
+  - dest: puma
+    src: puma/puma
+    default: main
+    timeout: 60
+    private: false
+  - dest: qovery-terraform-examples
+    src: Qovery/terraform-examples
+    default: main
+    timeout: 60
+    private: false
+  - dest: rack
+    src: rack/rack
+    default: main
+    timeout: 60
+    private: true
+  - dest: rails
+    src: rails/rails
+    default: main
+    timeout: 120
+    private: false
+  - dest: rails-html-sanitizer
+    src: rails/rails-html-sanitizer
+    default: main
+    timeout: 60
+    private: true
+  - dest: rails-performance-book
+    src: Gawyn/rails-performance-book
+    default: main
+    timeout: 60
+    private: false
+  - dest: rails_admin
+    src: railsadminteam/rails_admin
+    default: master
+    timeout: 60
+    private: false
+  - dest: rails_apps_composer
+    src: RailsApps/rails_apps_composer
+    default: master
+    timeout: 60
+    private: false
+  - dest: rcm
+    src: thoughtbot/rcm
+    default: main
+    timeout: 60
+    private: false
+  - dest: react-rails-redux-sample
+    src: suusan2go/react-rails-redux-sample
+    default: master
+    timeout: 60
+    private: false
+  - dest: redis-container
+    src: sclorg/redis-container
+    default: master
+    timeout: 60
+    private: false
+  - dest: reia
+    src: tarcieri/reia
+    default: master
+    timeout: 60
+    private: false
+  - dest: responders
+    src: heartcombo/responders
+    default: main
+    timeout: 60
+    private: false
+  - dest: resque
+    src: resque/resque
+    default: master
+    timeout: 60
+    private: false
+  - dest: resque-scheduler
+    src: resque/resque-scheduler
+    default: master
+    timeout: 60
+    private: false
+  - dest: rest-client
+    src: rest-client/rest-client
+    default: master
+    timeout: 60
+    private: false
+  - dest: rideshare
+    src: andyatkinson/rideshare
+    default: main
+    timeout: 60
+    private: false
+  - dest: rubocop
+    src: rubocop/rubocop
+    default: master
+    timeout: 60
+    private: false
+  - dest: ruby_complexity_simulations
+    src: sausheong/ruby_complexity_simulations
+    default: master
+    timeout: 60
+    private: false
+  - dest: saing
+    src: bryanbibat/saing
+    default: master
+    timeout: 60
+    private: false
+  - dest: shippo-ruby-client
+    src: goshippo/shippo-ruby-client
+    default: master
+    timeout: 60
+    private: false
+  - dest: simple-cloudfront-invalidator
+    src: laurilehmijoki/simple-cloudfront-invalidator
+    default: master
+    timeout: 60
+    private: false
+  - dest: slavingia-skills
+    src: slavingia/skills
+    default: main
+    timeout: 60
+    private: false
+  - dest: solidus
+    src: solidusio/solidus
+    default: main
+    timeout: 60
+    private: false
+  - dest: spree
+    src: spree/spree
+    default: main
+    timeout: 120
+    private: false
+  - dest: spree_gateway
+    src: spree-contrib/spree_gateway
+    default: main
+    timeout: 60
+    private: false
+  - dest: stimulus
+    src: hotwired/stimulus
+    default: main
+    timeout: 60
+    private: false
+  - dest: superpowers
+    src: obra/superpowers
+    default: main
+    timeout: 60
+    private: false
+  - dest: tailwind-css-from-scratch
+    src: PacktPublishing/Tailwind-CSS-From-Scratch---Learn-by-Building-Projects
+    default: main
+    timeout: 60
+    private: false
+  - dest: taskr
+    src: jchris/taskr
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-acm
+    src: terraform-aws-modules/terraform-aws-acm
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-alb
+    src: terraform-aws-modules/terraform-aws-alb
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-apigateway-v2
+    src: terraform-aws-modules/terraform-aws-apigateway-v2
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-app-runner
+    src: terraform-aws-modules/terraform-aws-app-runner
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-appconfig
+    src: terraform-aws-modules/terraform-aws-appconfig
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-appsync
+    src: terraform-aws-modules/terraform-aws-appsync
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-atlantis
+    src: terraform-aws-modules/terraform-aws-atlantis
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-autoscaling
+    src: terraform-aws-modules/terraform-aws-autoscaling
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-batch
+    src: terraform-aws-modules/terraform-aws-batch
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-cloudfront
+    src: terraform-aws-modules/terraform-aws-cloudfront
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-cloudwatch
+    src: terraform-aws-modules/terraform-aws-cloudwatch
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-customer-gateway
+    src: terraform-aws-modules/terraform-aws-customer-gateway
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-datadog-forwarders
+    src: terraform-aws-modules/terraform-aws-datadog-forwarders
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-dms
+    src: terraform-aws-modules/terraform-aws-dms
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-dynamodb-table
+    src: terraform-aws-modules/terraform-aws-dynamodb-table
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-ec2-instance
+    src: terraform-aws-modules/terraform-aws-ec2-instance
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-ecr
+    src: terraform-aws-modules/terraform-aws-ecr
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-ecs
+    src: terraform-aws-modules/terraform-aws-ecs
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-efs
+    src: terraform-aws-modules/terraform-aws-efs
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-eks
+    src: terraform-aws-modules/terraform-aws-eks
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-eks-blueprints
+    src: aws-ia/terraform-aws-eks-blueprints
+    default: main
+    timeout: 60
+    private: false
+  - dest: terraform-aws-eks-pod-identity
+    src: terraform-aws-modules/terraform-aws-eks-pod-identity
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-elasticache
+    src: terraform-aws-modules/terraform-aws-elasticache
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-elb
+    src: terraform-aws-modules/terraform-aws-elb
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-emr
+    src: terraform-aws-modules/terraform-aws-emr
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-eventbridge
+    src: terraform-aws-modules/terraform-aws-eventbridge
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-fsx
+    src: terraform-aws-modules/terraform-aws-fsx
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-global-accelerator
+    src: terraform-aws-modules/terraform-aws-global-accelerator
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-iam
+    src: terraform-aws-modules/terraform-aws-iam
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-key-pair
+    src: terraform-aws-modules/terraform-aws-key-pair
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-kms
+    src: terraform-aws-modules/terraform-aws-kms
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-lambda
+    src: terraform-aws-modules/terraform-aws-lambda
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-managed-service-grafana
+    src: terraform-aws-modules/terraform-aws-managed-service-grafana
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-managed-service-prometheus
+    src: terraform-aws-modules/terraform-aws-managed-service-prometheus
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-memory-db
+    src: terraform-aws-modules/terraform-aws-memory-db
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-msk-kafka-cluster
+    src: terraform-aws-modules/terraform-aws-msk-kafka-cluster
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-network-firewall
+    src: terraform-aws-modules/terraform-aws-network-firewall
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-notify-slack
+    src: terraform-aws-modules/terraform-aws-notify-slack
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-opensearch
+    src: terraform-aws-modules/terraform-aws-opensearch
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-pricing
+    src: terraform-aws-modules/terraform-aws-pricing
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-rds
+    src: terraform-aws-modules/terraform-aws-rds
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-rds-aurora
+    src: terraform-aws-modules/terraform-aws-rds-aurora
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-rds-proxy
+    src: terraform-aws-modules/terraform-aws-rds-proxy
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-redshift
+    src: terraform-aws-modules/terraform-aws-redshift
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-route53
+    src: terraform-aws-modules/terraform-aws-route53
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-s3-bucket
+    src: terraform-aws-modules/terraform-aws-s3-bucket
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-secrets-manager
+    src: terraform-aws-modules/terraform-aws-secrets-manager
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-security-group
+    src: terraform-aws-modules/terraform-aws-security-group
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-sns
+    src: terraform-aws-modules/terraform-aws-sns
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-solutions
+    src: terraform-aws-modules/terraform-aws-solutions
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-sqs
+    src: terraform-aws-modules/terraform-aws-sqs
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-ssm-parameter
+    src: terraform-aws-modules/terraform-aws-ssm-parameter
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-step-functions
+    src: terraform-aws-modules/terraform-aws-step-functions
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-transit-gateway
+    src: terraform-aws-modules/terraform-aws-transit-gateway
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-vpc
+    src: terraform-aws-modules/terraform-aws-vpc
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-vpn-gateway
+    src: terraform-aws-modules/terraform-aws-vpn-gateway
+    default: master
+    timeout: 60
+    private: false
+  - dest: terraform-aws-wafv2
+    src: terraform-aws-modules/terraform-aws-wafv2
+    default: master
+    timeout: 60
+    private: false
+  - dest: thoughtbot-til
+    src: thoughtbot/til
+    default: main
+    timeout: 60
+    private: false
+  - dest: trellis
+    src: roots/trellis
+    default: master
+    timeout: 60
+    private: false
+  - dest: tweetnest
+    src: graulund/tweetnest
+    default: master
+    timeout: 60
+    private: false
+  - dest: typhoeus
+    src: typhoeus/typhoeus
+    default: master
+    timeout: 60
+    private: false
+  - dest: vagrant-lxc
+    src: fgrehm/vagrant-lxc
+    default: master
+    timeout: 60
+    private: false
+  - dest: vlc4iphone
+    src: zodttd/vlc4iphone
+    default: master
+    timeout: 60
+    private: false
+  - dest: yield_star_client
+    src: g5search/yield_star_client
+    default: master
+    timeout: 60
+    private: false
