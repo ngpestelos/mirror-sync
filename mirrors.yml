@@ -936,3 +936,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: animatable
+    src: LeaVerou/animatable
+    default: gh-pages
+    timeout: 60
+    private: true
