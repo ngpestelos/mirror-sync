@@ -851,3 +851,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: 235-devise-and-omniauth-revised
+    src: railscasts/235-devise-and-omniauth-revised
+    default: master
+    timeout: 60
+    private: true
