@@ -836,3 +836,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: 022-eager-loading-revised
+    src: railscasts/022-eager-loading-revised
+    default: master
+    timeout: 60
+    private: true
