@@ -14,14 +14,13 @@ OWNER="${DEST_OWNER:-ngpestelos}"
 DST="https://github.com/${OWNER}/${DEST}.git"
 SRC_URL="https://github.com/${SRC}.git"
 
-# GitHub git HTTP wants Basic, not Bearer. Token stays out of the URL
-# (fine-grained PAT + newline made x-access-token:… URLs malformed).
-AUTH=$(printf 'x-access-token:%s' "$TOKEN" | base64 -w0)
-# Newer git ignores generic http.extraHeader for github.com.
-# Match actions/checkout: host-scoped extraheader on the dest clone.
-git_auth() {
-  git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic ${AUTH}" "$@"
-}
+# checkout@v4 already set extraheader with GITHUB_TOKEN. That header cannot
+# push other repos and duplicates Authorization if we add a second one.
+git config --unset-all http.https://github.com/.extraheader 2>/dev/null || true
+git config --global --unset-all http.https://github.com/.extraheader 2>/dev/null || true
+git config --global \
+  "url.https://x-access-token:${TOKEN}@github.com/.insteadOf" \
+  "https://github.com/"
 
 CI_RE='^ci: (restore sync-upstream workflow after mirror|add sync-upstream workflow for |disable daily sync until workflow PAT exists)'
 
@@ -56,7 +55,7 @@ push_with_bypass() {
   local logf rc
   logf=$(mktemp)
   set +e
-  git_auth -C src.git push "$@" >"$logf" 2>&1
+  git -C src.git push "$@" >"$logf" 2>&1
   rc=$?
   set -e
   if [[ $rc -eq 0 ]]; then
@@ -65,7 +64,7 @@ push_with_bypass() {
   fi
   cat "$logf" >&2
   if bypass_secrets_from_log "$logf"; then
-    git_auth -C src.git push "$@"
+    git -C src.git push "$@"
     rm -f "$logf"
     return 0
   fi
@@ -94,11 +93,11 @@ git clone --bare "$SRC_URL" src.git
 git -C src.git remote add dest "$DST"
 # Dest-only refs land under remotes/dest/* ; do not prune dest-only names.
 set +e
-git_auth -C src.git fetch dest '+refs/heads/*:refs/remotes/dest/*'
+git -C src.git fetch dest '+refs/heads/*:refs/remotes/dest/*'
 fetch_rc=$?
 set -e
 if [[ $fetch_rc -ne 0 ]]; then
-  if git_auth ls-remote "$DST" "refs/heads/${DEF}" | grep -q .; then
+  if git ls-remote "$DST" "refs/heads/${DEF}" | grep -q .; then
     echo "FAIL dest exists but fetch failed" >&2
     exit 1
   fi
@@ -169,7 +168,7 @@ fi
 echo "SUMMARY dest=${DEST} skipped=${skipped} ff=${ffed} force_ci=${forced} failed=${failed}"
 
 up_sha=$(git -C src.git rev-parse "refs/heads/${DEF}")
-dest_sha=$(git_auth ls-remote "$DST" "refs/heads/${DEF}" | awk '{print $1}')
+dest_sha=$(git ls-remote "$DST" "refs/heads/${DEF}" | awk '{print $1}')
 if [[ -z "$dest_sha" || "$up_sha" != "$dest_sha" ]]; then
   echo "FAIL SHA ${DEF} dest=${dest_sha:-none} up=${up_sha}" >&2
   exit 1
