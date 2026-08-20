@@ -901,3 +901,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: 5minbootstrap
+    src: phred/5minbootstrap
+    default: master
+    timeout: 60
+    private: true
