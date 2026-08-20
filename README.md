@@ -1,20 +1,22 @@
 # mirror-sync
 
-Daily heads+tags sync of `ngpestelos/*` full-history mirrors. Schedule lives here so dest default can stay SHA-identical to upstream.
+Daily heads+tags sync of `ngpestelos-mirrors/*` full-history dests. Schedule lives here so dest default can stay SHA-identical to upstream.
 
 Dest-local `.github/workflows/sync-upstream.yml` is retired. `GITHUB_TOKEN` cannot restore workflow files on public dests.
 
 ## Auth
 
-Repo secret `MIRROR_PUSH_TOKEN`: fine-grained PAT, **selected dests**, Contents read/write **and** Workflows write. Not All repositories.
+GitHub App `ngpestelos-mirror-sync` installed on org `ngpestelos-mirrors`, **all org repos**. Secrets `MIRROR_APP_ID` + `MIRROR_APP_PRIVATE_KEY`. Installation tokens: username `x-access-token`. Dest not visible to the App is **SKIP** (exit 0), not fail.
 
-Disable Actions on each dest **before** the first PAT push. PAT pushes trigger dest `on: push` CI; `GITHUB_TOKEN` did not.
+`MIRROR_PUSH_TOKEN` is the retired selected-repos PAT fallback. Do not switch that PAT to All repositories.
+
+Disable dest Actions **before** the first App push.
 
 ## Add a dest
 
-1. `mirror_one_oss.sh <name> <owner/repo> [branch]` (no dest workflow).
-2. Disable dest Actions: `gh api -X PUT repos/ngpestelos/<name>/actions/permissions -f enabled=false`
-3. Add dest to the PAT selected-repos list.
+1. `mirror_one_oss.sh <name> <owner/repo> [branch]` — dest is `ngpestelos-mirrors/<name>` (no dest workflow).
+2. Disable dest Actions: `printf '{"enabled":false}\n' | gh api --method PUT repos/ngpestelos-mirrors/<name>/actions/permissions --input -`
+3. App all-org-repos sees it. Do not add dests to a PAT.
 4. `python3 scripts/harvest.py` (or append `mirrors.yml`) and push.
 
 ## Manual

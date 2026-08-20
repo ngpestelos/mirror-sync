@@ -81,17 +81,19 @@ jobs:
       group: sync-dest-${{ matrix.dest }}
       cancel-in-progress: true
     env:
+      MIRROR_APP_ID: ${{ secrets.MIRROR_APP_ID }}
+      MIRROR_APP_PRIVATE_KEY: ${{ secrets.MIRROR_APP_PRIVATE_KEY }}
       MIRROR_PUSH_TOKEN: ${{ secrets.MIRROR_PUSH_TOKEN }}
-      GH_TOKEN: ${{ secrets.MIRROR_PUSH_TOKEN }}
+      DEST_OWNER: ngpestelos-mirrors
       DEST: ${{ matrix.dest }}
       SRC: ${{ matrix.src }}
       DEF: ${{ matrix.default }}
     steps:
       - uses: actions/checkout@v4
-      - name: Token present
+      - name: App credentials present
         run: |
-          if [[ -z "${MIRROR_PUSH_TOKEN}" ]]; then
-            echo "FAIL MIRROR_PUSH_TOKEN empty" >&2
+          if [[ -z "${MIRROR_APP_ID}" || -z "${MIRROR_APP_PRIVATE_KEY}" ]]; then
+            echo "FAIL MIRROR_APP_ID or MIRROR_APP_PRIVATE_KEY empty" >&2
             exit 1
           fi
       - name: Sync ${{ matrix.dest }}

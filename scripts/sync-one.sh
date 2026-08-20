@@ -1,36 +1,53 @@
 #!/usr/bin/env bash
 # Sync one dest from public upstream. Heads+tags only. Never prune.
-# Env: MIRROR_PUSH_TOKEN, DEST, SRC, DEF
+# Env: DEST, SRC, DEF
+# Auth: MIRROR_APP_ID + MIRROR_APP_PRIVATE_KEY (org dests) or MIRROR_PUSH_TOKEN (legacy PAT).
+# Installation tokens expire ~1h — remint before dest git (kubernetes timeout is 360).
 set -euo pipefail
 
 DEST="${DEST:?}"
 SRC="${SRC:?}"
 DEF="${DEF:?}"
-TOKEN=$(printf '%s' "${MIRROR_PUSH_TOKEN:?}" | tr -d '\r\n')
-TOKEN="${TOKEN#"${TOKEN%%[![:space:]]*}"}"
-TOKEN="${TOKEN%"${TOKEN##*[![:space:]]}"}"
-[[ -n "$TOKEN" ]] || { echo "FAIL MIRROR_PUSH_TOKEN empty after strip" >&2; exit 1; }
-OWNER="${DEST_OWNER:-ngpestelos}"
-# Username in dest URL so git only asks for a password (the PAT).
-DST="https://${OWNER}@github.com/${OWNER}/${DEST}.git"
-SRC_URL="https://github.com/${SRC}.git"
-
-# checkout@v4 extraheader is GITHUB_TOKEN (cannot push other repos).
-git config --unset-all http.https://github.com/.extraheader 2>/dev/null || true
-git config --global --unset-all http.https://github.com/.extraheader 2>/dev/null || true
-# Fine-grained PAT in a URL is rejected ("Malformed input to a URL function").
-# Askpass only fires when the server requests credentials (private dest).
+OWNER="${DEST_OWNER:-ngpestelos-mirrors}"
+HERE="$(cd "$(dirname "$0")" && pwd)"
 ASKPASS=$(mktemp)
 TOKEN_FILE=$(mktemp)
-printf '%s' "$TOKEN" >"$TOKEN_FILE"
 chmod 600 "$TOKEN_FILE"
-# Fine-grained PAT: username is the GitHub login, password is the token.
-# x-access-token is for GITHUB_TOKEN / installation tokens only.
 printf '%s\n' '#!/bin/sh' "cat '$TOKEN_FILE'" >"$ASKPASS"
 chmod 700 "$ASKPASS"
 export GIT_ASKPASS="$ASKPASS"
 export GIT_TERMINAL_PROMPT=0
 trap 'rm -f "$ASKPASS" "$TOKEN_FILE"' EXIT
+
+mint_token() {
+  local raw
+  if [[ -n "${MIRROR_APP_ID:-}" && -n "${MIRROR_APP_PRIVATE_KEY:-}" ]]; then
+    raw=$(python3 "$HERE/mint-app-token.py") || {
+      echo "FAIL mint installation token" >&2
+      return 1
+    }
+    GIT_USER="x-access-token"
+  else
+    raw=$(printf '%s' "${MIRROR_PUSH_TOKEN:?}")
+    GIT_USER="${GIT_USER:-${OWNER}}"
+  fi
+  raw=$(printf '%s' "$raw" | tr -d '\r\n')
+  raw="${raw#"${raw%%[![:space:]]*}"}"
+  raw="${raw%"${raw##*[![:space:]]}"}"
+  [[ -n "$raw" ]] || { echo "FAIL dest token empty after strip" >&2; return 1; }
+  TOKEN="$raw"
+  printf '%s' "$TOKEN" >"$TOKEN_FILE"
+  DST="https://${GIT_USER}@github.com/${OWNER}/${DEST}.git"
+}
+
+# checkout@v4 extraheader is GITHUB_TOKEN (cannot push other repos).
+git config --unset-all http.https://github.com/.extraheader 2>/dev/null || true
+git config --global --unset-all http.https://github.com/.extraheader 2>/dev/null || true
+# Fine-grained PAT in a URL is rejected. Installation tokens use username x-access-token.
+# ASKPASS password-only. Lived 20260820 PAT; 20260821 App.
+SRC_URL="https://github.com/${SRC}.git"
+mint_token
+export GH_TOKEN="$TOKEN"
 
 # Dest-local yaml subjects from successive driver wordings. Lived 20260820: axlsx
 # "ci: add daily upstream sync for axlsx mirror" failed closed until this list grew.
@@ -65,6 +82,8 @@ bypass_secrets_from_log() {
 
 push_with_bypass() {
   local logf rc
+  mint_token
+  export GH_TOKEN="$TOKEN"
   logf=$(mktemp)
   set +e
   git -C src.git push "$@" >"$logf" 2>&1
@@ -100,13 +119,25 @@ extra_is_ci_only() {
 }
 
 need_disk
-if ! GH_TOKEN="$TOKEN" gh api "repos/${OWNER}/${DEST}" --jq .full_name >/dev/null; then
-  echo "FAIL PAT cannot API-read dest ${OWNER}/${DEST} (check selected repos + Contents write)" >&2
-  GH_TOKEN="$TOKEN" gh api "repos/${OWNER}/${DEST}" >&2 || true
+mint_token
+export GH_TOKEN="$TOKEN"
+set +e
+probe_out=$(gh api "repos/${OWNER}/${DEST}" --jq .full_name 2>&1)
+probe_rc=$?
+set -e
+if [[ "$probe_rc" -ne 0 ]]; then
+  echo "$probe_out" >&2
+  if echo "$probe_out" | grep -Eqi 'HTTP 404|HTTP 403|Not Found|Resource not accessible'; then
+    echo "SKIP dest ${OWNER}/${DEST} not visible to App (not transferred yet)"
+    exit 0
+  fi
+  echo "FAIL App cannot API-read dest ${OWNER}/${DEST}" >&2
   exit 1
 fi
 echo "CLONE ${SRC}"
 git clone --bare "$SRC_URL" src.git
+mint_token
+export GH_TOKEN="$TOKEN"
 git -C src.git remote add dest "$DST"
 # Dest-only refs land under remotes/dest/* ; do not prune dest-only names.
 set +e
@@ -184,6 +215,8 @@ fi
 
 echo "SUMMARY dest=${DEST} skipped=${skipped} ff=${ffed} force_ci=${forced} failed=${failed}"
 
+mint_token
+export GH_TOKEN="$TOKEN"
 up_sha=$(git -C src.git rev-parse "refs/heads/${DEF}")
 dest_sha=$(git ls-remote "$DST" "refs/heads/${DEF}" | awk '{print $1}')
 if [[ -z "$dest_sha" || "$up_sha" != "$dest_sha" ]]; then
