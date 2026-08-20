@@ -861,3 +861,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: 250-authentication-from-scratch
+    src: railscasts/250-authentication-from-scratch
+    default: master
+    timeout: 60
+    private: true
