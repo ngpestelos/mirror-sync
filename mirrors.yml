@@ -886,3 +886,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: 353-oauth-with-doorkeeper
+    src: railscasts/353-oauth-with-doorkeeper
+    default: master
+    timeout: 60
+    private: true
