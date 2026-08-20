@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""List ngpestelos dests whose description is a mirror, write mirrors.yml.
+"""List ngpestelos-mirrors dests whose description is a mirror, write mirrors.yml.
 
 Default branch comes from UPSTREAM, not dest. Skips forks and excludes.yml.
 """
@@ -71,7 +71,7 @@ def main() -> int:
         [
             "repo",
             "list",
-            "ngpestelos",
+            "ngpestelos-mirrors",
             "--limit",
             "1000",
             "--json",
