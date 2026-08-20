@@ -11,7 +11,8 @@ TOKEN="${TOKEN#"${TOKEN%%[![:space:]]*}"}"
 TOKEN="${TOKEN%"${TOKEN##*[![:space:]]}"}"
 [[ -n "$TOKEN" ]] || { echo "FAIL MIRROR_PUSH_TOKEN empty after strip" >&2; exit 1; }
 OWNER="${DEST_OWNER:-ngpestelos}"
-DST="https://github.com/${OWNER}/${DEST}.git"
+# Username in dest URL so git only asks for a password (the PAT).
+DST="https://${OWNER}@github.com/${OWNER}/${DEST}.git"
 SRC_URL="https://github.com/${SRC}.git"
 
 # checkout@v4 extraheader is GITHUB_TOKEN (cannot push other repos).
@@ -25,7 +26,7 @@ printf '%s' "$TOKEN" >"$TOKEN_FILE"
 chmod 600 "$TOKEN_FILE"
 # Fine-grained PAT: username is the GitHub login, password is the token.
 # x-access-token is for GITHUB_TOKEN / installation tokens only.
-printf '%s\n' '#!/bin/sh' "case \"\$1\" in" "  *[Uu]sername*) echo ${OWNER} ;;" "  *) cat '$TOKEN_FILE' ;;" 'esac' >"$ASKPASS"
+printf '%s\n' '#!/bin/sh' "cat '$TOKEN_FILE'" >"$ASKPASS"
 chmod 700 "$ASKPASS"
 export GIT_ASKPASS="$ASKPASS"
 export GIT_TERMINAL_PROMPT=0
