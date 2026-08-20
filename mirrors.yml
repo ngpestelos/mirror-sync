@@ -956,3 +956,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: ansible-rails-app
+    src: dodecaphonic/ansible-rails-app
+    default: master
+    timeout: 60
+    private: true
