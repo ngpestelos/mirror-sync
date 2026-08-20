@@ -911,3 +911,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: adapter-git
+    src: bkeepers/adapter-git
+    default: master
+    timeout: 60
+    private: true
