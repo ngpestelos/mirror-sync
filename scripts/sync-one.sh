@@ -32,7 +32,9 @@ export GIT_ASKPASS="$ASKPASS"
 export GIT_TERMINAL_PROMPT=0
 trap 'rm -f "$ASKPASS" "$TOKEN_FILE"' EXIT
 
-CI_RE='^ci: (restore sync-upstream workflow after mirror|add sync-upstream workflow for |disable daily sync until workflow PAT exists)'
+# Dest-local yaml subjects from successive driver wordings. Lived 20260820: axlsx
+# "ci: add daily upstream sync for axlsx mirror" failed closed until this list grew.
+CI_RE='^ci: (restore sync-upstream workflow after mirror|add sync-upstream workflow for |add daily upstream sync for |add upstream sync Action for |disable daily sync until workflow PAT exists)'
 
 need_disk() {
   local kb
