@@ -876,3 +876,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: 317-rack-app-from-scratch
+    src: railscasts/317-rack-app-from-scratch
+    default: master
+    timeout: 60
+    private: true
