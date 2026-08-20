@@ -881,3 +881,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: 350-rest-api-versioning
+    src: railscasts/350-rest-api-versioning
+    default: master
+    timeout: 60
+    private: true
