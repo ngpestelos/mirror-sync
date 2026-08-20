@@ -14,13 +14,20 @@ OWNER="${DEST_OWNER:-ngpestelos}"
 DST="https://github.com/${OWNER}/${DEST}.git"
 SRC_URL="https://github.com/${SRC}.git"
 
-# checkout@v4 already set extraheader with GITHUB_TOKEN. That header cannot
-# push other repos and duplicates Authorization if we add a second one.
+# checkout@v4 extraheader is GITHUB_TOKEN (cannot push other repos).
 git config --unset-all http.https://github.com/.extraheader 2>/dev/null || true
 git config --global --unset-all http.https://github.com/.extraheader 2>/dev/null || true
-git config --global \
-  "url.https://x-access-token:${TOKEN}@github.com/.insteadOf" \
-  "https://github.com/"
+# Fine-grained PAT in a URL is rejected ("Malformed input to a URL function").
+# Askpass only fires when the server requests credentials (private dest).
+ASKPASS=$(mktemp)
+TOKEN_FILE=$(mktemp)
+printf '%s' "$TOKEN" >"$TOKEN_FILE"
+chmod 600 "$TOKEN_FILE"
+printf '%s\n' '#!/bin/sh' "case \"\$1\" in" '  *[Uu]sername*) echo x-access-token ;;' "  *) cat '$TOKEN_FILE' ;;" 'esac' >"$ASKPASS"
+chmod 700 "$ASKPASS"
+export GIT_ASKPASS="$ASKPASS"
+export GIT_TERMINAL_PROMPT=0
+trap 'rm -f "$ASKPASS" "$TOKEN_FILE"' EXIT
 
 CI_RE='^ci: (restore sync-upstream workflow after mirror|add sync-upstream workflow for |disable daily sync until workflow PAT exists)'
 
