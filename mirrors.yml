@@ -921,3 +921,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: Agile_Data_Code
+    src: rjurney/Agile_Data_Code
+    default: master
+    timeout: 60
+    private: true
