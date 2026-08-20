@@ -98,6 +98,11 @@ extra_is_ci_only() {
 }
 
 need_disk
+if ! GH_TOKEN="$TOKEN" gh api "repos/${OWNER}/${DEST}" --jq .full_name >/dev/null; then
+  echo "FAIL PAT cannot API-read dest ${OWNER}/${DEST} (check selected repos + Contents write)" >&2
+  GH_TOKEN="$TOKEN" gh api "repos/${OWNER}/${DEST}" >&2 || true
+  exit 1
+fi
 echo "CLONE ${SRC}"
 git clone --bare "$SRC_URL" src.git
 git -C src.git remote add dest "$DST"
