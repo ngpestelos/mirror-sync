@@ -11,7 +11,7 @@ OWNER="${DEST_OWNER:-ngpestelos}"
 DST="https://x-access-token:${TOKEN}@github.com/${OWNER}/${DEST}.git"
 SRC_URL="https://github.com/${SRC}.git"
 
-CI_RE='^ci: (restore sync-upstream workflow after mirror|add sync-upstream workflow for )'
+CI_RE='^ci: (restore sync-upstream workflow after mirror|add sync-upstream workflow for |disable daily sync until workflow PAT exists)'
 
 need_disk() {
   local kb
