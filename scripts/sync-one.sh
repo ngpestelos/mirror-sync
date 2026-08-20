@@ -14,10 +14,11 @@ OWNER="${DEST_OWNER:-ngpestelos}"
 DST="https://github.com/${OWNER}/${DEST}.git"
 SRC_URL="https://github.com/${SRC}.git"
 
-# Token never goes in the remote URL (fine-grained PATs + trailing
-# newline made x-access-token:… URLs "Malformed input to a URL function").
+# GitHub git HTTP wants Basic, not Bearer. Token stays out of the URL
+# (fine-grained PAT + newline made x-access-token:… URLs malformed).
+AUTH=$(printf 'x-access-token:%s' "$TOKEN" | base64 -w0)
 git_auth() {
-  git -c "http.extraHeader=Authorization: Bearer ${TOKEN}" "$@"
+  git -c "http.extraHeader=AUTHORIZATION: basic ${AUTH}" "$@"
 }
 
 CI_RE='^ci: (restore sync-upstream workflow after mirror|add sync-upstream workflow for |disable daily sync until workflow PAT exists)'
