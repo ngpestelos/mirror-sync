@@ -891,3 +891,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: 413-fast-tests
+    src: railscasts/413-fast-tests
+    default: master
+    timeout: 60
+    private: true
