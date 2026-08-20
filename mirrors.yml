@@ -916,3 +916,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: adcenter-client
+    src: joshua-peck/adcenter-client
+    default: master
+    timeout: 60
+    private: true
