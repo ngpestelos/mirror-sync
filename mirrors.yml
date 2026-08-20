@@ -841,3 +841,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: 151-rack-middleware
+    src: railscasts/151-rack-middleware
+    default: master
+    timeout: 60
+    private: true
