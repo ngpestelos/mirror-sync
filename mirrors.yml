@@ -961,3 +961,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: ansible-starter
+    src: chadoh/ansible-starter
+    default: master
+    timeout: 60
+    private: true
