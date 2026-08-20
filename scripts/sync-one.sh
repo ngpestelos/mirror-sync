@@ -17,8 +17,10 @@ SRC_URL="https://github.com/${SRC}.git"
 # GitHub git HTTP wants Basic, not Bearer. Token stays out of the URL
 # (fine-grained PAT + newline made x-access-token:… URLs malformed).
 AUTH=$(printf 'x-access-token:%s' "$TOKEN" | base64 -w0)
+# Newer git ignores generic http.extraHeader for github.com.
+# Match actions/checkout: host-scoped extraheader on the dest clone.
 git_auth() {
-  git -c "http.extraHeader=AUTHORIZATION: basic ${AUTH}" "$@"
+  git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic ${AUTH}" "$@"
 }
 
 CI_RE='^ci: (restore sync-upstream workflow after mirror|add sync-upstream workflow for |disable daily sync until workflow PAT exists)'
@@ -89,6 +91,8 @@ extra_is_ci_only() {
 need_disk
 echo "CLONE ${SRC}"
 git clone --bare "$SRC_URL" src.git
+git -C src.git config --local \
+  "http.https://github.com/.extraheader" "AUTHORIZATION: basic ${AUTH}"
 git -C src.git remote add dest "$DST"
 # Dest-only refs land under remotes/dest/* ; do not prune dest-only names.
 set +e
