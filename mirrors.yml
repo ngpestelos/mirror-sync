@@ -831,3 +831,8 @@ mirrors:
     default: master
     timeout: 60
     private: false
+  - dest: aasm
+    src: aasm/aasm
+    default: master
+    timeout: 60
+    private: true
