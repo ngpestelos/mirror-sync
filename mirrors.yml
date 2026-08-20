@@ -866,3 +866,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: 271-resque
+    src: railscasts/271-resque
+    default: master
+    timeout: 60
+    private: true
