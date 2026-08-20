@@ -906,3 +906,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: active_model_serializers
+    src: rails-api/active_model_serializers
+    default: master
+    timeout: 60
+    private: true
