@@ -856,3 +856,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: 241-simple-omniauth-revised
+    src: railscasts/241-simple-omniauth-revised
+    default: master
+    timeout: 60
+    private: true
