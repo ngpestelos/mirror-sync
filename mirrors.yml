@@ -931,3 +931,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: algorithms
+    src: kanwei/algorithms
+    default: master
+    timeout: 60
+    private: true
