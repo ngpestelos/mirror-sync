@@ -6,10 +6,19 @@ set -euo pipefail
 DEST="${DEST:?}"
 SRC="${SRC:?}"
 DEF="${DEF:?}"
-TOKEN="${MIRROR_PUSH_TOKEN:?}"
+TOKEN=$(printf '%s' "${MIRROR_PUSH_TOKEN:?}" | tr -d '\r\n')
+TOKEN="${TOKEN#"${TOKEN%%[![:space:]]*}"}"
+TOKEN="${TOKEN%"${TOKEN##*[![:space:]]}"}"
+[[ -n "$TOKEN" ]] || { echo "FAIL MIRROR_PUSH_TOKEN empty after strip" >&2; exit 1; }
 OWNER="${DEST_OWNER:-ngpestelos}"
-DST="https://x-access-token:${TOKEN}@github.com/${OWNER}/${DEST}.git"
+DST="https://github.com/${OWNER}/${DEST}.git"
 SRC_URL="https://github.com/${SRC}.git"
+
+# Token never goes in the remote URL (fine-grained PATs + trailing
+# newline made x-access-token:… URLs "Malformed input to a URL function").
+git_auth() {
+  git -c "http.extraHeader=Authorization: Bearer ${TOKEN}" "$@"
+}
 
 CI_RE='^ci: (restore sync-upstream workflow after mirror|add sync-upstream workflow for |disable daily sync until workflow PAT exists)'
 
@@ -44,7 +53,7 @@ push_with_bypass() {
   local logf rc
   logf=$(mktemp)
   set +e
-  git -C src.git push "$@" >"$logf" 2>&1
+  git_auth -C src.git push "$@" >"$logf" 2>&1
   rc=$?
   set -e
   if [[ $rc -eq 0 ]]; then
@@ -53,7 +62,7 @@ push_with_bypass() {
   fi
   cat "$logf" >&2
   if bypass_secrets_from_log "$logf"; then
-    git -C src.git push "$@"
+    git_auth -C src.git push "$@"
     rm -f "$logf"
     return 0
   fi
@@ -82,11 +91,15 @@ git clone --bare "$SRC_URL" src.git
 git -C src.git remote add dest "$DST"
 # Dest-only refs land under remotes/dest/* ; do not prune dest-only names.
 set +e
-git -C src.git fetch dest '+refs/heads/*:refs/remotes/dest/*' 2>/dev/null
+git_auth -C src.git fetch dest '+refs/heads/*:refs/remotes/dest/*'
 fetch_rc=$?
 set -e
 if [[ $fetch_rc -ne 0 ]]; then
-  echo "WARN dest fetch failed (empty dest?); will push new heads"
+  if git_auth ls-remote "$DST" "refs/heads/${DEF}" | grep -q .; then
+    echo "FAIL dest exists but fetch failed" >&2
+    exit 1
+  fi
+  echo "WARN dest empty; will push new heads"
 fi
 
 if ! git -C src.git show-ref --verify --quiet "refs/heads/${DEF}"; then
@@ -153,7 +166,7 @@ fi
 echo "SUMMARY dest=${DEST} skipped=${skipped} ff=${ffed} force_ci=${forced} failed=${failed}"
 
 up_sha=$(git -C src.git rev-parse "refs/heads/${DEF}")
-dest_sha=$(git ls-remote "$DST" "refs/heads/${DEF}" | awk '{print $1}')
+dest_sha=$(git_auth ls-remote "$DST" "refs/heads/${DEF}" | awk '{print $1}')
 if [[ -z "$dest_sha" || "$up_sha" != "$dest_sha" ]]; then
   echo "FAIL SHA ${DEF} dest=${dest_sha:-none} up=${up_sha}" >&2
   exit 1
