@@ -23,7 +23,9 @@ ASKPASS=$(mktemp)
 TOKEN_FILE=$(mktemp)
 printf '%s' "$TOKEN" >"$TOKEN_FILE"
 chmod 600 "$TOKEN_FILE"
-printf '%s\n' '#!/bin/sh' "case \"\$1\" in" '  *[Uu]sername*) echo x-access-token ;;' "  *) cat '$TOKEN_FILE' ;;" 'esac' >"$ASKPASS"
+# Fine-grained PAT: username is the GitHub login, password is the token.
+# x-access-token is for GITHUB_TOKEN / installation tokens only.
+printf '%s\n' '#!/bin/sh' "case \"\$1\" in" "  *[Uu]sername*) echo ${OWNER} ;;" "  *) cat '$TOKEN_FILE' ;;" 'esac' >"$ASKPASS"
 chmod 700 "$ASKPASS"
 export GIT_ASKPASS="$ASKPASS"
 export GIT_TERMINAL_PROMPT=0
