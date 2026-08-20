@@ -896,3 +896,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: 417-foundation
+    src: railscasts/417-foundation
+    default: master
+    timeout: 60
+    private: true
