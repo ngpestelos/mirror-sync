@@ -926,3 +926,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: alfred2-dropbox
+    src: canadaduane/alfred2-dropbox
+    default: master
+    timeout: 60
+    private: true
