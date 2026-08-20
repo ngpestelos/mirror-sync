@@ -871,3 +871,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: 305-authentication-with-warden
+    src: railscasts/305-authentication-with-warden
+    default: master
+    timeout: 60
+    private: true
