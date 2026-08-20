@@ -1,5 +1,5 @@
 # Generated from harvest 20260820. Default branch is UPSTREAM.
-# dests=170 generated=20260819T235601Z
+# dests=166 generated=20260819T235859Z
 mirrors:
   - dest: active_merchant
     src: activemerchant/active_merchant
@@ -271,21 +271,6 @@ mirrors:
     default: master
     timeout: 60
     private: false
-  - dest: legal-skills
-    src: gfodor/legal-skills
-    default: main
-    timeout: 60
-    private: true
-  - dest: lenfi-sdk
-    src: lenfiLabs/lenfi-sdk
-    default: main
-    timeout: 60
-    private: true
-  - dest: lenfi-smart-contracts
-    src: lenfiLabs/lenfi-smart-contracts
-    default: main
-    timeout: 60
-    private: true
   - dest: llama.cpp
     src: ggerganov/llama.cpp
     default: master
@@ -313,11 +298,6 @@ mirrors:
     private: false
   - dest: marcel
     src: rails/marcel
-    default: main
-    timeout: 60
-    private: true
-  - dest: materials
-    src: lenfiLabs/materials
     default: main
     timeout: 60
     private: true

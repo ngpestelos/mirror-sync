@@ -3,3 +3,7 @@
 # Exclude dests whose DEFAULT is dest-only work, or whose dest workflow is custom.
 
 - yt-dlp          # dest-only play rebase; inventory custom dest workflow
+- legal-skills    # one-shot; no daily sync
+- lenfi-smart-contracts
+- lenfi-sdk
+- materials       # dest of lenfiLabs/materials; one-shot
