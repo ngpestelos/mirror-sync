@@ -91,8 +91,6 @@ extra_is_ci_only() {
 need_disk
 echo "CLONE ${SRC}"
 git clone --bare "$SRC_URL" src.git
-git -C src.git config --local \
-  "http.https://github.com/.extraheader" "AUTHORIZATION: basic ${AUTH}"
 git -C src.git remote add dest "$DST"
 # Dest-only refs land under remotes/dest/* ; do not prune dest-only names.
 set +e
