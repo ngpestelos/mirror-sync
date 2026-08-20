@@ -941,3 +941,8 @@ mirrors:
     default: gh-pages
     timeout: 60
     private: true
+  - dest: ansible-devenv-example
+    src: gorsuch/ansible-devenv-example
+    default: master
+    timeout: 60
+    private: true
