@@ -2421,3 +2421,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: ruby-rails-sample
+    src: heroku/ruby-rails-sample
+    default: master
+    timeout: 60
+    private: true
