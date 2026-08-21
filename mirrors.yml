@@ -2491,3 +2491,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: puppet-boxen
+    src: boxen/puppet-boxen
+    default: master
+    timeout: 60
+    private: true
