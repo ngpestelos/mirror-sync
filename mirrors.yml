@@ -2061,3 +2061,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: ruby-style-guide
+    src: rubocop/ruby-style-guide
+    default: master
+    timeout: 60
+    private: true
