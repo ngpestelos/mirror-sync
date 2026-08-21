@@ -2181,3 +2181,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: sinatra
+    src: sinatra/sinatra
+    default: main
+    timeout: 60
+    private: true
