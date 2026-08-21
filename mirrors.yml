@@ -2056,3 +2056,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: ruby-prof
+    src: ruby-prof/ruby-prof
+    default: master
+    timeout: 60
+    private: true
