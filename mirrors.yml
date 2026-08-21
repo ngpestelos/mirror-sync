@@ -1821,3 +1821,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: curriculum
+    src: opsschool/curriculum
+    default: master
+    timeout: 60
+    private: true
