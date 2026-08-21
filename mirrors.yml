@@ -1186,3 +1186,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: digitalocean
+    src: motdotla/digitalocean
+    default: master
+    timeout: 60
+    private: true
