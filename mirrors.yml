@@ -1386,3 +1386,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: ffi
+    src: ffi/ffi
+    default: master
+    timeout: 60
+    private: true
