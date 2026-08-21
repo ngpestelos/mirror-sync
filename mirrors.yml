@@ -1306,3 +1306,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: eloquent_ruby_code
+    src: russolsen/eloquent_ruby_code
+    default: master
+    timeout: 60
+    private: true
