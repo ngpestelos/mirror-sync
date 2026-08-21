@@ -2571,3 +2571,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: working-with-go
+    src: mkaz/working-with-go
+    default: master
+    timeout: 60
+    private: true
