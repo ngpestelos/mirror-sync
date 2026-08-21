@@ -2311,3 +2311,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: twitter-ruby
+    src: sferik/twitter-ruby
+    default: master
+    timeout: 60
+    private: true
