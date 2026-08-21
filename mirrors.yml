@@ -2511,3 +2511,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: gemcutter
+    src: rubygems/gemcutter
+    default: master
+    timeout: 60
+    private: true
