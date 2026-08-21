@@ -1111,3 +1111,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: cucumber-ruby
+    src: cucumber/cucumber-ruby
+    default: main
+    timeout: 60
+    private: true
