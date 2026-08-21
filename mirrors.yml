@@ -2206,3 +2206,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: spring-commands-cucumber
+    src: jonleighton/spring-commands-cucumber
+    default: master
+    timeout: 60
+    private: true
