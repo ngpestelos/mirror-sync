@@ -2476,3 +2476,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: ansible-for-rubyists
+    src: ansible/ansible-for-rubyists
+    default: master
+    timeout: 60
+    private: true
