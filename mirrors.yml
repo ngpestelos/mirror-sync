@@ -2446,3 +2446,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: ansible-docker
+    src: gerhard/ansible-docker
+    default: master
+    timeout: 60
+    private: true
