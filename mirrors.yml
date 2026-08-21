@@ -1771,3 +1771,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: Mining-the-Social-Web-2nd-Edition
+    src: ptwobrussell/Mining-the-Social-Web-2nd-Edition
+    default: master
+    timeout: 60
+    private: true
