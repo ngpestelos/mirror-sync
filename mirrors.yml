@@ -2666,3 +2666,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: httpie-cli
+    src: httpie/cli
+    default: master
+    timeout: 60
+    private: true
