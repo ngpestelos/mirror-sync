@@ -2811,3 +2811,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: libgit2
+    src: libgit2/libgit2
+    default: main
+    timeout: 60
+    private: true
