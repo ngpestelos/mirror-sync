@@ -2071,3 +2071,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: rubygems-mirror
+    src: ruby/rubygems-mirror
+    default: master
+    timeout: 60
+    private: true
