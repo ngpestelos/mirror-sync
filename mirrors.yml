@@ -1091,3 +1091,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: chronic
+    src: mojombo/chronic
+    default: master
+    timeout: 60
+    private: true
