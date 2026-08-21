@@ -2391,3 +2391,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: zeus
+    src: burke/zeus
+    default: master
+    timeout: 60
+    private: true
