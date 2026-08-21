@@ -2451,3 +2451,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: coreos-vagrant
+    src: coreos/coreos-vagrant
+    default: master
+    timeout: 60
+    private: true
