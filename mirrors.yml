@@ -1031,3 +1031,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: buildstep
+    src: progrium/buildstep
+    default: master
+    timeout: 60
+    private: true
