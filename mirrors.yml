@@ -2366,3 +2366,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: weber
+    src: elixir-web/weber
+    default: master
+    timeout: 60
+    private: true
