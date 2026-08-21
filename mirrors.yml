@@ -1571,3 +1571,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: guides
+    src: rubygems/guides
+    default: main
+    timeout: 60
+    private: true
