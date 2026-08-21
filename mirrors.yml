@@ -2871,3 +2871,8 @@ mirrors:
     default: version-3
     timeout: 60
     private: true
+  - dest: postgres
+    src: postgres/postgres
+    default: master
+    timeout: 60
+    private: true
