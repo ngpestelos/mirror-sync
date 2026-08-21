@@ -2226,3 +2226,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: sshcommand
+    src: dokku/sshcommand
+    default: main
+    timeout: 60
+    private: true
