@@ -2506,3 +2506,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: unit-examples
+    src: coreos/unit-examples
+    default: master
+    timeout: 60
+    private: true
