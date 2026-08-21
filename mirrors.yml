@@ -2861,3 +2861,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: git
+    src: git/git
+    default: master
+    timeout: 60
+    private: true
