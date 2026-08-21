@@ -1736,3 +1736,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: maintenance
+    src: capistrano/maintenance
+    default: master
+    timeout: 60
+    private: true
