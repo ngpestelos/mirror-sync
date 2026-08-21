@@ -2241,3 +2241,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: sucks-rocks
+    src: garybernhardt/sucks-rocks
+    default: master
+    timeout: 60
+    private: true
