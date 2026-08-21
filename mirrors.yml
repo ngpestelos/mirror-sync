@@ -2636,3 +2636,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: punch
+    src: laktek/punch
+    default: master
+    timeout: 60
+    private: true
