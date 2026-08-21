@@ -1181,3 +1181,8 @@ mirrors:
     default: default
     timeout: 60
     private: true
+  - dest: devise_session_expirable
+    src: teleological/devise_session_expirable
+    default: master
+    timeout: 60
+    private: true
