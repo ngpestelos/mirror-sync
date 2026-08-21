@@ -1751,3 +1751,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: massiveapp
+    src: deployingrails/massiveapp
+    default: master
+    timeout: 60
+    private: true
