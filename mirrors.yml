@@ -1046,3 +1046,8 @@ mirrors:
     default: develop
     timeout: 60
     private: true
+  - dest: captainhook
+    src: bketelsen/captainhook
+    default: master
+    timeout: 60
+    private: true
