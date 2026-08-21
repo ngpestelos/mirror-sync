@@ -1006,3 +1006,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: better_errors
+    src: BetterErrors/better_errors
+    default: master
+    timeout: 60
+    private: true
