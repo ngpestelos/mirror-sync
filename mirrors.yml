@@ -1966,3 +1966,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: raptor
+    src: garybernhardt/raptor
+    default: master
+    timeout: 60
+    private: true
