@@ -1101,3 +1101,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: computationbook
+    src: tomstuart/computationbook
+    default: master
+    timeout: 60
+    private: true
