@@ -2416,3 +2416,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: example-ruby-sinatra
+    src: deis/example-ruby-sinatra
+    default: master
+    timeout: 60
+    private: true
