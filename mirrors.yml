@@ -2851,3 +2851,8 @@ mirrors:
     default: 2.13.x
     timeout: 60
     private: true
+  - dest: redis
+    src: redis/redis
+    default: unstable
+    timeout: 60
+    private: true
