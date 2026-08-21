@@ -2046,3 +2046,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: ruby-fcgi-ng
+    src: alphallc/ruby-fcgi-ng
+    default: master
+    timeout: 60
+    private: true
