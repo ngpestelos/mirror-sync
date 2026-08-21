@@ -1011,3 +1011,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: binding_of_caller
+    src: banister/binding_of_caller
+    default: master
+    timeout: 60
+    private: true
