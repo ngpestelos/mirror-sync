@@ -1126,3 +1126,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: datasci_course_materials
+    src: uwescience/datasci_course_materials
+    default: master
+    timeout: 60
+    private: true
