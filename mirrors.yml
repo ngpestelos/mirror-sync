@@ -1436,3 +1436,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: foreman-monit
+    src: capita/foreman-monit
+    default: master
+    timeout: 60
+    private: true
