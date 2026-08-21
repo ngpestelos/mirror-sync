@@ -2146,3 +2146,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: sequel
+    src: jeremyevans/sequel
+    default: master
+    timeout: 60
+    private: true
