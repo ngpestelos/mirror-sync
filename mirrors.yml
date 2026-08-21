@@ -2581,3 +2581,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: harvested
+    src: zmoazeni/harvested
+    default: master
+    timeout: 60
+    private: true
