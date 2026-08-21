@@ -1906,3 +1906,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: puppet-vagrant-boxes
+    src: aelogica/puppet-vagrant-boxes
+    default: master
+    timeout: 60
+    private: true
