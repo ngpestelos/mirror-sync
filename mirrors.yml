@@ -1601,3 +1601,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: hipache
+    src: hipache/hipache
+    default: master
+    timeout: 60
+    private: true
