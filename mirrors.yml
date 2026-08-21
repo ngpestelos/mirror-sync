@@ -2631,3 +2631,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: capybara-webkit
+    src: thoughtbot/capybara-webkit
+    default: master
+    timeout: 60
+    private: true
