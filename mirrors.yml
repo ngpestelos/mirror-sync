@@ -1211,3 +1211,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: docker-openvpn
+    src: kylemanna/docker-openvpn
+    default: master
+    timeout: 60
+    private: true
