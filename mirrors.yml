@@ -2481,3 +2481,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: contribute
+    src: rubygems/contribute
+    default: master
+    timeout: 60
+    private: true
