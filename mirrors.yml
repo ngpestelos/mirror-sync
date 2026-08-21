@@ -1396,3 +1396,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: fig2coreos
+    src: CenturyLinkLabs/fig2coreos
+    default: master
+    timeout: 60
+    private: true
