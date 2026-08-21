@@ -1796,3 +1796,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: nginx-appliance
+    src: progrium/nginx-appliance
+    default: master
+    timeout: 60
+    private: true
