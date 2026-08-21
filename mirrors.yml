@@ -1286,3 +1286,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: dotenv
+    src: bkeepers/dotenv
+    default: main
+    timeout: 60
+    private: true
