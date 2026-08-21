@@ -1026,3 +1026,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: browsercms
+    src: browsermedia/browsercms
+    default: master
+    timeout: 60
+    private: true
