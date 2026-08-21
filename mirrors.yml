@@ -2716,3 +2716,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: classicswarm
+    src: docker-archive/classicswarm
+    default: master
+    timeout: 60
+    private: true
