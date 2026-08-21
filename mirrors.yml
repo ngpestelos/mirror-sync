@@ -2176,3 +2176,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: simplecov
+    src: simplecov-ruby/simplecov
+    default: main
+    timeout: 60
+    private: true
