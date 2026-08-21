@@ -1576,3 +1576,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: hacking-on-deis-workshop
+    src: carmstrong/hacking-on-deis-workshop
+    default: master
+    timeout: 60
+    private: true
