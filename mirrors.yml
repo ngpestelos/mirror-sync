@@ -1706,3 +1706,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: linkedin
+    src: hexgnu/linkedin
+    default: master
+    timeout: 60
+    private: true
