@@ -2006,3 +2006,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: react-rails-example
+    src: johnthethird/react-rails-example
+    default: master
+    timeout: 60
+    private: true
