@@ -1946,3 +1946,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: rails_best_practices
+    src: flyerhzm/rails_best_practices
+    default: main
+    timeout: 60
+    private: true
