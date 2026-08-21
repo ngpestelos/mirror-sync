@@ -2291,3 +2291,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: travis-sso
+    src: travis-ci/travis-sso
+    default: master
+    timeout: 60
+    private: true
