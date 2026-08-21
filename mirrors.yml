@@ -1256,3 +1256,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: docl
+    src: nathansamson/docl
+    default: master
+    timeout: 60
+    private: true
