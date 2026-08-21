@@ -1746,3 +1746,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: martini
+    src: go-martini/martini
+    default: master
+    timeout: 60
+    private: true
