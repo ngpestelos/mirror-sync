@@ -2711,3 +2711,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: fog
+    src: fog/fog
+    default: master
+    timeout: 60
+    private: true
