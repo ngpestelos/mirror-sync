@@ -2166,3 +2166,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: sidekiq
+    src: sidekiq/sidekiq
+    default: main
+    timeout: 60
+    private: true
