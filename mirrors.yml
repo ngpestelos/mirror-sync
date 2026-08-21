@@ -1651,3 +1651,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: java
+    src: cookbooks/java
+    default: master
+    timeout: 60
+    private: true
