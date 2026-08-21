@@ -2616,3 +2616,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: flynn-demo
+    src: flynn-archive/flynn-demo
+    default: master
+    timeout: 60
+    private: true
