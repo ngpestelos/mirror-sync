@@ -2211,3 +2211,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: spring-commands-rspec
+    src: jonleighton/spring-commands-rspec
+    default: master
+    timeout: 60
+    private: true
