@@ -1441,3 +1441,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: foundation-rails
+    src: foundation/foundation-rails
+    default: develop
+    timeout: 60
+    private: true
