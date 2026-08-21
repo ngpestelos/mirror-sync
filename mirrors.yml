@@ -2501,3 +2501,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: chef-cap-demo
+    src: smartlogic/chef-cap-demo
+    default: master
+    timeout: 60
+    private: true
