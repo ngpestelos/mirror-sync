@@ -1266,3 +1266,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: docrails
+    src: ericallam/docrails
+    default: master
+    timeout: 60
+    private: true
