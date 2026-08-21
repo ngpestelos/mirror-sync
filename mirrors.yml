@@ -1971,3 +1971,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: rbenv
+    src: rbenv/rbenv
+    default: master
+    timeout: 60
+    private: true
