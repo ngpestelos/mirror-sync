@@ -1926,3 +1926,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: rack-test
+    src: rack/rack-test
+    default: main
+    timeout: 60
+    private: true
