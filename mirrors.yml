@@ -2576,3 +2576,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: mac-dev-setup
+    src: jessfraz/mac-dev-setup
+    default: master
+    timeout: 60
+    private: true
