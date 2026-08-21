@@ -1371,3 +1371,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: fabric
+    src: fabric/fabric
+    default: main
+    timeout: 60
+    private: true
