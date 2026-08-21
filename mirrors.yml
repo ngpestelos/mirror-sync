@@ -2796,3 +2796,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: bitcoinbook
+    src: bitcoinbook/bitcoinbook
+    default: develop
+    timeout: 60
+    private: true
