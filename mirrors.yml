@@ -1296,3 +1296,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: ecto
+    src: elixir-ecto/ecto
+    default: master
+    timeout: 60
+    private: true
