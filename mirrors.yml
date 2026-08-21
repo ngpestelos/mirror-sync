@@ -2306,3 +2306,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: tribute-api
+    src: tribute/tribute-api
+    default: master
+    timeout: 60
+    private: true
