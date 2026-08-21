@@ -2641,3 +2641,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: discourse_docker
+    src: discourse/discourse_docker
+    default: main
+    timeout: 60
+    private: true
