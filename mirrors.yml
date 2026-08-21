@@ -2221,3 +2221,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: sqlite3-ruby
+    src: sparklemotion/sqlite3-ruby
+    default: main
+    timeout: 60
+    private: true
