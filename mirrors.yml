@@ -1451,3 +1451,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: free-for-dev
+    src: ripienaar/free-for-dev
+    default: master
+    timeout: 60
+    private: true
