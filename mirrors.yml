@@ -1981,3 +1981,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: rbnacl-libsodium
+    src: kron4eg/rbnacl-libsodium
+    default: master
+    timeout: 60
+    private: true
