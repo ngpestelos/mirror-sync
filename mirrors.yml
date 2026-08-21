@@ -1071,3 +1071,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: ruby_rbenv
+    src: sous-chefs/ruby_rbenv
+    default: main
+    timeout: 60
+    private: true
