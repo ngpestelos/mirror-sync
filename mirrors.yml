@@ -2081,3 +2081,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: rubyonrails.geekcampbaguio.com
+    src: geekcamp-ph/rubyonrails.geekcampbaguio.com
+    default: master
+    timeout: 60
+    private: true
