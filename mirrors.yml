@@ -2261,3 +2261,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: techan.js
+    src: andredumas/techan.js
+    default: master
+    timeout: 60
+    private: true
