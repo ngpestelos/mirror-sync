@@ -2516,3 +2516,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: so_auth_provider
+    src: jagthedrummer/so_auth_provider
+    default: master
+    timeout: 60
+    private: true
