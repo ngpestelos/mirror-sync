@@ -1846,3 +1846,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: passenger-docker
+    src: phusion/passenger-docker
+    default: master
+    timeout: 60
+    private: true
