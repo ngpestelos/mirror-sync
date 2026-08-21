@@ -2826,3 +2826,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: our-boxen
+    src: boxen/our-boxen
+    default: master
+    timeout: 60
+    private: true
