@@ -2436,3 +2436,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: dind
+    src: jpetazzo/dind
+    default: master
+    timeout: 60
+    private: true
