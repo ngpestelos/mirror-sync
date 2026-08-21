@@ -2731,3 +2731,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: backbone
+    src: jashkenas/backbone
+    default: master
+    timeout: 60
+    private: true
