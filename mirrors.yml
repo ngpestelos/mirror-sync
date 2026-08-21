@@ -1206,3 +1206,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: docker-grand-ambassador
+    src: cpuguy83/docker-grand-ambassador
+    default: master
+    timeout: 60
+    private: true
