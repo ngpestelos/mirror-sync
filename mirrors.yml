@@ -1246,3 +1246,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: dockerize
+    src: cambridge-healthcare/dockerize
+    default: master
+    timeout: 60
+    private: true
