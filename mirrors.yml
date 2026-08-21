@@ -2031,3 +2031,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: resource_kit
+    src: digitalocean/resource_kit
+    default: main
+    timeout: 60
+    private: true
