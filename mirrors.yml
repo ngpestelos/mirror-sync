@@ -2161,3 +2161,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: shoes4
+    src: shoes/shoes4
+    default: main
+    timeout: 60
+    private: true
