@@ -1491,3 +1491,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: get_process_mem
+    src: zombocom/get_process_mem
+    default: main
+    timeout: 60
+    private: true
