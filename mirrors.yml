@@ -1416,3 +1416,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: flipper
+    src: flippercloud/flipper
+    default: main
+    timeout: 60
+    private: true
