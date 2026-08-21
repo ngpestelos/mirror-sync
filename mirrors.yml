@@ -981,3 +981,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: awesome-docker
+    src: veggiemonk/awesome-docker
+    default: master
+    timeout: 60
+    private: true
