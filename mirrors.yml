@@ -2466,3 +2466,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: minidown
+    src: jjyr/minidown
+    default: master
+    timeout: 60
+    private: true
