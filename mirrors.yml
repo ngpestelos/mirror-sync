@@ -1781,3 +1781,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: monit
+    src: renard/monit
+    default: master
+    timeout: 60
+    private: true
