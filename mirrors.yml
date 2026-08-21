@@ -2801,3 +2801,8 @@ mirrors:
     default: develop
     timeout: 60
     private: true
+  - dest: legacy-homebrew
+    src: Homebrew/legacy-homebrew
+    default: master
+    timeout: 60
+    private: true
