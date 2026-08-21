@@ -1151,3 +1151,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: delayed_job
+    src: collectiveidea/delayed_job
+    default: master
+    timeout: 60
+    private: true
