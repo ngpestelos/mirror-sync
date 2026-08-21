@@ -1881,3 +1881,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: pipework
+    src: jpetazzo/pipework
+    default: master
+    timeout: 60
+    private: true
