@@ -1561,3 +1561,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: groupcache
+    src: golang/groupcache
+    default: master
+    timeout: 60
+    private: true
