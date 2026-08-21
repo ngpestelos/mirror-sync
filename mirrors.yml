@@ -2331,3 +2331,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: vagrant-lamp-centos63
+    src: miccheng/vagrant-lamp-centos63
+    default: master
+    timeout: 60
+    private: true
