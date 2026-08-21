@@ -2741,3 +2741,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: rubygems-verification
+    src: rubygems/rubygems-verification
+    default: master
+    timeout: 60
+    private: true
