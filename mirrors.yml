@@ -1226,3 +1226,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: docker-redmine
+    src: binaryphile/docker-redmine
+    default: master
+    timeout: 60
+    private: true
