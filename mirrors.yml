@@ -2756,3 +2756,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: predictionio
+    src: apache/predictionio
+    default: develop
+    timeout: 60
+    private: true
