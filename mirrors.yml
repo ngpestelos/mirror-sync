@@ -1301,3 +1301,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: elixir-socket
+    src: meh/elixir-socket
+    default: master
+    timeout: 60
+    private: true
