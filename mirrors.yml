@@ -1841,3 +1841,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: parslet
+    src: kschiess/parslet
+    default: master
+    timeout: 60
+    private: true
