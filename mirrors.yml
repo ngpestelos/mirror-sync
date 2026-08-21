@@ -1196,3 +1196,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: docker-api
+    src: upserve/docker-api
+    default: master
+    timeout: 60
+    private: true
