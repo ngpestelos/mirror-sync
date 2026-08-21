@@ -2626,3 +2626,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: boot2docker
+    src: boot2docker/boot2docker
+    default: master
+    timeout: 60
+    private: true
