@@ -2426,3 +2426,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: nsenter
+    src: jpetazzo/nsenter
+    default: master
+    timeout: 60
+    private: true
