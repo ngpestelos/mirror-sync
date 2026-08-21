@@ -2356,3 +2356,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: wal-e
+    src: wal-e/wal-e
+    default: master
+    timeout: 60
+    private: true
