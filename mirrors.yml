@@ -1921,3 +1921,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: rack-mini-profiler
+    src: MiniProfiler/rack-mini-profiler
+    default: master
+    timeout: 60
+    private: true
