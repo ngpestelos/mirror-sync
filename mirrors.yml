@@ -2361,3 +2361,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: web-console
+    src: rails/web-console
+    default: main
+    timeout: 60
+    private: true
