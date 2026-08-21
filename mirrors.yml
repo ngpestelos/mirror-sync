@@ -1411,3 +1411,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: flip
+    src: pda/flip
+    default: master
+    timeout: 60
+    private: true
