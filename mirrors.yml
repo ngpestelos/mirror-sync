@@ -2336,3 +2336,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: vanilla-boxes
+    src: teohm/vanilla-boxes
+    default: master
+    timeout: 60
+    private: true
