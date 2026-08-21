@@ -2406,3 +2406,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: puppet-virtualbox
+    src: boxen/puppet-virtualbox
+    default: master
+    timeout: 60
+    private: true
