@@ -2601,3 +2601,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: godep
+    src: tools/godep
+    default: master
+    timeout: 60
+    private: true
