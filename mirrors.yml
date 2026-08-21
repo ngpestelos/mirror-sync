@@ -1896,3 +1896,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: princely
+    src: mbleigh/princely
+    default: master
+    timeout: 60
+    private: true
