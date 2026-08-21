@@ -2256,3 +2256,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: systemd
+    src: mariux/systemd
+    default: master
+    timeout: 60
+    private: true
