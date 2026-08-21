@@ -1431,3 +1431,8 @@ mirrors:
     default: rails4
     timeout: 60
     private: true
+  - dest: foreman
+    src: ddollar/foreman
+    default: main
+    timeout: 60
+    private: true
