@@ -1676,3 +1676,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: learn-rails
+    src: RailsApps/learn-rails
+    default: master
+    timeout: 60
+    private: true
