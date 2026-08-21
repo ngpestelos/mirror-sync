@@ -2231,3 +2231,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: sshkit
+    src: capistrano/sshkit
+    default: master
+    timeout: 60
+    private: true
