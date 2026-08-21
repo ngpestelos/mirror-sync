@@ -1316,3 +1316,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: ember_data_example
+    src: dgeb/ember_data_example
+    default: master
+    timeout: 60
+    private: true
