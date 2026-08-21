@@ -2461,3 +2461,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: rspec-metagem
+    src: rspec/rspec-metagem
+    default: main
+    timeout: 60
+    private: true
