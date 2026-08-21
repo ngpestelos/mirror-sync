@@ -2531,3 +2531,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: serf-docker-vagrant-hipache
+    src: fgrehm/serf-docker-vagrant-hipache
+    default: master
+    timeout: 60
+    private: true
