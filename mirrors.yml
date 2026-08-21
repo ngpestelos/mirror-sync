@@ -2236,3 +2236,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: base-images
+    src: heroku/base-images
+    default: main
+    timeout: 60
+    private: true
