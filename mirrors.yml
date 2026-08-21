@@ -2676,3 +2676,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: express
+    src: expressjs/express
+    default: master
+    timeout: 60
+    private: true
