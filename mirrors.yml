@@ -2381,3 +2381,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: dotfiles
+    src: skwp/dotfiles
+    default: master
+    timeout: 60
+    private: true
