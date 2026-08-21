@@ -1756,3 +1756,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: mcapi2-ruby-examples
+    src: kale/mcapi2-ruby-examples
+    default: master
+    timeout: 60
+    private: true
