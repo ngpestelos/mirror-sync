@@ -1481,3 +1481,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: gemirro
+    src: PierreRambaud/gemirro
+    default: master
+    timeout: 60
+    private: true
