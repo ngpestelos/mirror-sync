@@ -1776,3 +1776,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: minitest_cookbook_source
+    src: chriskottom/minitest_cookbook_source
+    default: master
+    timeout: 60
+    private: true
