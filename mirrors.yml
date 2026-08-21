@@ -1951,3 +1951,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: rails_stdout_logging
+    src: heroku/rails_stdout_logging
+    default: master
+    timeout: 60
+    private: true
