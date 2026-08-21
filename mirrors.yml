@@ -2786,3 +2786,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: cadvisor
+    src: google/cadvisor
+    default: master
+    timeout: 60
+    private: true
