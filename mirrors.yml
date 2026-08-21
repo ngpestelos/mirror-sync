@@ -1741,3 +1741,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: MarkdownPresenter
+    src: jsakamoto/MarkdownPresenter
+    default: master
+    timeout: 60
+    private: true
