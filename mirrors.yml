@@ -1551,3 +1551,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: grape-entity-matchers
+    src: agileanimal/grape-entity-matchers
+    default: master
+    timeout: 60
+    private: true
