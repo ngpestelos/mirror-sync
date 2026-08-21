@@ -1636,3 +1636,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: huginn
+    src: huginn/huginn
+    default: master
+    timeout: 60
+    private: true
