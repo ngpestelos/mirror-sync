@@ -2496,3 +2496,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: dockerbook-code
+    src: turnbullpress/dockerbook-code
+    default: master
+    timeout: 60
+    private: true
