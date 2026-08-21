@@ -2051,3 +2051,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: ruby-net-ldap
+    src: ruby-ldap/ruby-net-ldap
+    default: master
+    timeout: 60
+    private: true
