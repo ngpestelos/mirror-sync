@@ -2141,3 +2141,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: seed-fu
+    src: mbleigh/seed-fu
+    default: master
+    timeout: 60
+    private: true
