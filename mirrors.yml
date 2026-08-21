@@ -2411,3 +2411,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: rails_12factor
+    src: heroku/rails_12factor
+    default: master
+    timeout: 60
+    private: true
