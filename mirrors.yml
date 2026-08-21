@@ -2816,3 +2816,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: vagrant
+    src: hashicorp/vagrant
+    default: main
+    timeout: 60
+    private: true
