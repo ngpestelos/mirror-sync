@@ -971,3 +971,8 @@ mirrors:
     default: gh-pages
     timeout: 60
     private: true
+  - dest: aruba
+    src: cucumber/aruba
+    default: main
+    timeout: 60
+    private: true
