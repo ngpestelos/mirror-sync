@@ -2691,3 +2691,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: nginx
+    src: libc/nginx
+    default: master
+    timeout: 60
+    private: true
