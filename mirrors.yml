@@ -2296,3 +2296,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: travis.rb
+    src: travis-ci/travis.rb
+    default: master
+    timeout: 60
+    private: true
