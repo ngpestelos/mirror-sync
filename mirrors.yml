@@ -1401,3 +1401,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: fleet-api
+    src: CenturyLinkLabs/fleet-api
+    default: master
+    timeout: 60
+    private: true
