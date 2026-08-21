@@ -2621,3 +2621,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: boot2docker-cli
+    src: boot2docker/boot2docker-cli
+    default: master
+    timeout: 60
+    private: true
