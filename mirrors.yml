@@ -1161,3 +1161,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: descendants_tracker
+    src: dkubb/descendants_tracker
+    default: master
+    timeout: 60
+    private: true
