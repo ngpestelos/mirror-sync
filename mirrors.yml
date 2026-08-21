@@ -1696,3 +1696,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: limber
+    src: stalcottsmith/limber
+    default: master
+    timeout: 60
+    private: true
