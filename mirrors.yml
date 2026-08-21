@@ -1986,3 +1986,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: rbp
+    src: practicingruby/rbp
+    default: master
+    timeout: 60
+    private: true
