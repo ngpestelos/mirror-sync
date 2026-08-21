@@ -1646,3 +1646,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: iruby
+    src: minrk/iruby
+    default: master
+    timeout: 60
+    private: true
