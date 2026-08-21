@@ -1056,3 +1056,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: carmen-rails
+    src: carmen-ruby/carmen-rails
+    default: master
+    timeout: 60
+    private: true
