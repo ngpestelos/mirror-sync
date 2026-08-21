@@ -1851,3 +1851,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: peepcode-chef-recipes
+    src: jsierles/peepcode-chef-recipes
+    default: master
+    timeout: 60
+    private: true
