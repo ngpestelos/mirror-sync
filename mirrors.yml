@@ -1501,3 +1501,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: gitmodel
+    src: pauldowman/gitmodel
+    default: master
+    timeout: 60
+    private: true
