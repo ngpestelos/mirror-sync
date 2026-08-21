@@ -2066,3 +2066,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: ruby_koans
+    src: spatten/ruby_koans
+    default: master
+    timeout: 60
+    private: true
