@@ -2766,3 +2766,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: celery
+    src: celery/celery
+    default: main
+    timeout: 60
+    private: true
