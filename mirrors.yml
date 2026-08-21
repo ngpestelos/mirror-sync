@@ -1891,3 +1891,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: prezto
+    src: sorin-ionescu/prezto
+    default: master
+    timeout: 60
+    private: true
