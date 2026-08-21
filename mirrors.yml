@@ -1176,3 +1176,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: devise_ldap_authenticatable
+    src: cschiewek/devise_ldap_authenticatable
+    default: default
+    timeout: 60
+    private: true
