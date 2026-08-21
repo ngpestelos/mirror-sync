@@ -1661,3 +1661,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: jzed
+    src: zedshaw/jzed
+    default: master
+    timeout: 60
+    private: true
