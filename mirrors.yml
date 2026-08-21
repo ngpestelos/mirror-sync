@@ -2656,3 +2656,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: ruby-lint
+    src: yorickpeterse/ruby-lint
+    default: master
+    timeout: 60
+    private: true
