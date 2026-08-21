@@ -966,3 +966,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: archive
+    src: qrush/archive
+    default: gh-pages
+    timeout: 60
+    private: true
