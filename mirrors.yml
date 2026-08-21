@@ -1381,3 +1381,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: feedjira
+    src: feedjira/feedjira
+    default: main
+    timeout: 60
+    private: true
