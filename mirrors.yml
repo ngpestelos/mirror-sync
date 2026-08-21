@@ -1426,3 +1426,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: forem
+    src: rubysherpas/forem
+    default: rails4
+    timeout: 60
+    private: true
