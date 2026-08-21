@@ -1546,3 +1546,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: grape-entity
+    src: ruby-grape/grape-entity
+    default: master
+    timeout: 60
+    private: true
