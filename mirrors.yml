@@ -2441,3 +2441,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: rails-meets-docker
+    src: gemnasium/rails-meets-docker
+    default: master
+    timeout: 60
+    private: true
