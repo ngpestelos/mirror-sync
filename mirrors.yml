@@ -2611,3 +2611,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: rubygems-status
+    src: rubygems/rubygems-status
+    default: master
+    timeout: 60
+    private: true
