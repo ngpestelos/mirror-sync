@@ -1131,3 +1131,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: go
+    src: datasciencemasters/go
+    default: master
+    timeout: 60
+    private: true
