@@ -1136,3 +1136,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: dbus
+    src: godbus/dbus
+    default: master
+    timeout: 60
+    private: true
