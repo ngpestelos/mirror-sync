@@ -1766,3 +1766,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: minigit
+    src: 3ofcoins/minigit
+    default: master
+    timeout: 60
+    private: true
