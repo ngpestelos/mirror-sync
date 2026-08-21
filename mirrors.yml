@@ -2351,3 +2351,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: virtus-typhoeus-api-demo
+    src: nick-desteffen/virtus-typhoeus-api-demo
+    default: master
+    timeout: 60
+    private: true
