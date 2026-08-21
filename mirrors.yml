@@ -1171,3 +1171,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: devise_example
+    src: jayshepherd/devise_example
+    default: master
+    timeout: 60
+    private: true
