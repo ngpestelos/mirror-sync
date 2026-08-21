@@ -1376,3 +1376,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: factory_bot
+    src: thoughtbot/factory_bot
+    default: main
+    timeout: 60
+    private: true
