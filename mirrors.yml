@@ -2856,3 +2856,8 @@ mirrors:
     default: unstable
     timeout: 60
     private: true
+  - dest: papers-we-love
+    src: papers-we-love/papers-we-love
+    default: main
+    timeout: 60
+    private: true
