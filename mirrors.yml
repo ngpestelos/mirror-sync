@@ -2121,3 +2121,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: scala_school
+    src: twitter/scala_school
+    default: master
+    timeout: 60
+    private: true
