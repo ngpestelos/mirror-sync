@@ -1731,3 +1731,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: macos-virtualbox-vm
+    src: geerlingguy/macos-virtualbox-vm
+    default: master
+    timeout: 60
+    private: true
