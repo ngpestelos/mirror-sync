@@ -2076,3 +2076,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: blog
+    src: rubygems/blog
+    default: master
+    timeout: 60
+    private: true
