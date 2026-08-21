@@ -1666,3 +1666,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: kartograph
+    src: digitalocean/kartograph
+    default: main
+    timeout: 60
+    private: true
