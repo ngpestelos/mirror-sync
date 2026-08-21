@@ -1201,3 +1201,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: docker-chef-solo
+    src: paulczar/docker-chef-solo
+    default: master
+    timeout: 60
+    private: true
