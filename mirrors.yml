@@ -1066,3 +1066,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: cells
+    src: trailblazer/cells
+    default: master
+    timeout: 60
+    private: true
