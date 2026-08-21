@@ -1461,3 +1461,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: fullcalendar-rails
+    src: bokmann/fullcalendar-rails
+    default: master
+    timeout: 60
+    private: true
