@@ -1701,3 +1701,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: linguistics
+    src: ged/linguistics
+    default: master
+    timeout: 60
+    private: true
