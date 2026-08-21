@@ -1656,3 +1656,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: jazz_hands
+    src: nixme/jazz_hands
+    default: master
+    timeout: 60
+    private: true
