@@ -2111,3 +2111,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: sample-aws-deploy
+    src: kuleszaj/sample-aws-deploy
+    default: master
+    timeout: 60
+    private: true
