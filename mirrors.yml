@@ -2586,3 +2586,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: squeel
+    src: activerecord-hackery/squeel
+    default: master
+    timeout: 60
+    private: true
