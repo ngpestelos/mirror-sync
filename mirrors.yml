@@ -1221,3 +1221,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: docker-rails
+    src: nonsense/docker-rails
+    default: master
+    timeout: 60
+    private: true
