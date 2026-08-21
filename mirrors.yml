@@ -1961,3 +1961,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: rake
+    src: ruby/rake
+    default: master
+    timeout: 60
+    private: true
