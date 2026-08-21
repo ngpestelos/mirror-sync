@@ -2266,3 +2266,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: terraform-cf-upload
+    src: lnguyen/terraform-cf-upload
+    default: master
+    timeout: 60
+    private: true
