@@ -2156,3 +2156,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: settingslogic
+    src: binarylogic/settingslogic
+    default: master
+    timeout: 60
+    private: true
