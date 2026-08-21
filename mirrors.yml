@@ -1001,3 +1001,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: best-practices
+    src: timoxley/best-practices
+    default: master
+    timeout: 60
+    private: true
