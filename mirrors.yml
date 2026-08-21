@@ -1626,3 +1626,8 @@ mirrors:
     default: trunk
     timeout: 60
     private: true
+  - dest: hub
+    src: mislav/hub
+    default: master
+    timeout: 60
+    private: true
