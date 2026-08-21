@@ -1861,3 +1861,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: perf-tools
+    src: brendangregg/perf-tools
+    default: master
+    timeout: 60
+    private: true
