@@ -2746,3 +2746,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: turingschool-curriculum
+    src: turingschool/curriculum
+    default: master
+    timeout: 60
+    private: true
