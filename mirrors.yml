@@ -2646,3 +2646,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: paperclip
+    src: thoughtbot/paperclip
+    default: main
+    timeout: 60
+    private: true
