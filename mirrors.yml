@@ -1421,3 +1421,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: forego
+    src: ddollar/forego
+    default: master
+    timeout: 60
+    private: true
