@@ -996,3 +996,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: bashstyle
+    src: progrium/bashstyle
+    default: master
+    timeout: 60
+    private: true
