@@ -2106,3 +2106,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: s3fsr
+    src: stephenh/s3fsr
+    default: master
+    timeout: 60
+    private: true
