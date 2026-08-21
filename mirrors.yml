@@ -2671,3 +2671,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: logplex
+    src: heroku/logplex
+    default: master
+    timeout: 60
+    private: true
