@@ -2246,3 +2246,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: surveyor
+    src: NUARIG/surveyor
+    default: master
+    timeout: 60
+    private: true
