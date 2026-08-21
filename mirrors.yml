@@ -1641,3 +1641,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: iconv
+    src: ruby/iconv
+    default: master
+    timeout: 60
+    private: true
