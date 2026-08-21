@@ -1241,3 +1241,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: dockerfiles
+    src: marksteve/dockerfiles
+    default: master
+    timeout: 60
+    private: true
