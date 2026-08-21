@@ -1036,3 +1036,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: bump
+    src: gregorym/bump
+    default: master
+    timeout: 60
+    private: true
