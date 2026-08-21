@@ -2151,3 +2151,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: service-oriented-design-with-ruby
+    src: pauldix/service-oriented-design-with-ruby
+    default: master
+    timeout: 60
+    private: true
