@@ -1236,3 +1236,8 @@ mirrors:
     default: new-repository-import-master
     timeout: 60
     private: true
+  - dest: docker-talk
+    src: brynary/docker-talk
+    default: master
+    timeout: 60
+    private: true
