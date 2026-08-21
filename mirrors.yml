@@ -2091,3 +2091,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: rudy
+    src: solutious/rudy
+    default: master
+    timeout: 60
+    private: true
