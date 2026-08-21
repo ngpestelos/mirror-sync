@@ -1061,3 +1061,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: cedarish
+    src: progrium/cedarish
+    default: master
+    timeout: 60
+    private: true
