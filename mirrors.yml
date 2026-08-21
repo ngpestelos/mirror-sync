@@ -1611,3 +1611,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: hitch
+    src: therubymug/hitch
+    default: master
+    timeout: 60
+    private: true
