@@ -2286,3 +2286,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: travis-chat
+    src: travis-ci/travis-chat
+    default: master
+    timeout: 60
+    private: true
