@@ -1631,3 +1631,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: hubot
+    src: hubotio/hubot
+    default: main
+    timeout: 60
+    private: true
