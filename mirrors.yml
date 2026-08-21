@@ -2201,3 +2201,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: someutils
+    src: laher/someutils
+    default: master
+    timeout: 60
+    private: true
