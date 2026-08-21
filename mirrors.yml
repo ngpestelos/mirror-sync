@@ -1076,3 +1076,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: chef-redis
+    src: ctrabold/chef-redis
+    default: master
+    timeout: 60
+    private: true
