@@ -2186,3 +2186,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: smart_devnet
+    src: pageman/smart_devnet
+    default: master
+    timeout: 60
+    private: true
