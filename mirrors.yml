@@ -2431,3 +2431,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: gemwhisperer
+    src: rubygems/gemwhisperer
+    default: master
+    timeout: 60
+    private: true
