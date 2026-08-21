@@ -2096,3 +2096,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: rugged
+    src: libgit2/rugged
+    default: master
+    timeout: 60
+    private: true
