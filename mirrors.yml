@@ -2386,3 +2386,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: yaml_db
+    src: yamldb/yaml_db
+    default: main
+    timeout: 60
+    private: true
