@@ -2276,3 +2276,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: tr3w_time_and_expenses
+    src: obie/tr3w_time_and_expenses
+    default: master
+    timeout: 60
+    private: true
