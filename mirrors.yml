@@ -1361,3 +1361,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: explain-git-with-d3
+    src: onlywei/explain-git-with-d3
+    default: master
+    timeout: 60
+    private: true
