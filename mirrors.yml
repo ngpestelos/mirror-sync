@@ -1806,3 +1806,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: octopress
+    src: imathis/octopress
+    default: master
+    timeout: 60
+    private: true
