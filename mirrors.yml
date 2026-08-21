@@ -1041,3 +1041,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: cancancan
+    src: CanCanCommunity/cancancan
+    default: develop
+    timeout: 60
+    private: true
