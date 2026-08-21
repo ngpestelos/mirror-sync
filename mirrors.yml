@@ -2546,3 +2546,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: boxen
+    src: boxen/boxen
+    default: master
+    timeout: 60
+    private: true
