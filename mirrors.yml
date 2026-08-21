@@ -2456,3 +2456,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: go-omaha
+    src: coreos/go-omaha
+    default: master
+    timeout: 60
+    private: true
