@@ -1446,3 +1446,8 @@ mirrors:
     default: develop
     timeout: 60
     private: true
+  - dest: frappuccino
+    src: steveklabnik/frappuccino
+    default: master
+    timeout: 60
+    private: true
