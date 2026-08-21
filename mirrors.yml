@@ -2101,3 +2101,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: s3cmd
+    src: s3tools/s3cmd
+    default: master
+    timeout: 60
+    private: true
