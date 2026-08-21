@@ -2131,3 +2131,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: scripts-for-hacking-on-deis
+    src: aledbf/scripts-for-hacking-on-deis
+    default: master
+    timeout: 60
+    private: true
