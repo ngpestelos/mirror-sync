@@ -2281,3 +2281,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: transpec
+    src: yujinakayama/transpec
+    default: master
+    timeout: 60
+    private: true
