@@ -1466,3 +1466,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: gattica
+    src: chrisle/gattica
+    default: master
+    timeout: 60
+    private: true
