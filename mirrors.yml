@@ -2846,3 +2846,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: scala
+    src: scala/scala
+    default: 2.13.x
+    timeout: 60
+    private: true
