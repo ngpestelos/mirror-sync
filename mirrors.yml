@@ -1586,3 +1586,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: heroku-buildpack-java
+    src: heroku/heroku-buildpack-java
+    default: main
+    timeout: 60
+    private: true
