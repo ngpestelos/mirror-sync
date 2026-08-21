@@ -1991,3 +1991,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: rcat
+    src: elm-city-craftworks/rcat
+    default: master
+    timeout: 60
+    private: true
