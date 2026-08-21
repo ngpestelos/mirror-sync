@@ -1291,3 +1291,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: dynamo
+    src: dynamo/dynamo
+    default: master
+    timeout: 60
+    private: true
