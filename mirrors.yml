@@ -1251,3 +1251,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: ui-for-docker
+    src: kevana/ui-for-docker
+    default: master
+    timeout: 60
+    private: true
