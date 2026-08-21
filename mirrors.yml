@@ -1621,3 +1621,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: httpotion
+    src: valpackett/httpotion
+    default: trunk
+    timeout: 60
+    private: true
