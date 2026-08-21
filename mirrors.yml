@@ -2126,3 +2126,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: sciruby
+    src: SciRuby/sciruby
+    default: master
+    timeout: 60
+    private: true
