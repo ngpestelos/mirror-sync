@@ -1691,3 +1691,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: librarian-chef
+    src: applicationsonline/librarian-chef
+    default: master
+    timeout: 60
+    private: true
