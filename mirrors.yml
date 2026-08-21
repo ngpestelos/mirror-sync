@@ -986,3 +986,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: backup
+    src: backup/backup
+    default: master
+    timeout: 60
+    private: true
