@@ -2806,3 +2806,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: elixir
+    src: elixir-lang/elixir
+    default: main
+    timeout: 60
+    private: true
