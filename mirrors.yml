@@ -2781,3 +2781,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: ansible-examples
+    src: ansible/ansible-examples
+    default: master
+    timeout: 60
+    private: true
