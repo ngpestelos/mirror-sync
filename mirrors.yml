@@ -1886,3 +1886,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: practicing-ruby-web
+    src: elm-city-craftworks/practicing-ruby-web
+    default: master
+    timeout: 60
+    private: true
