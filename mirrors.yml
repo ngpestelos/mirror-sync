@@ -1346,3 +1346,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: eventsource
+    src: antage/eventsource
+    default: master
+    timeout: 60
+    private: true
