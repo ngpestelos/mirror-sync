@@ -1331,3 +1331,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: erlang_guidelines
+    src: inaka/erlang_guidelines
+    default: main
+    timeout: 60
+    private: true
