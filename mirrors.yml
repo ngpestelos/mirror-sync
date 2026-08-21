@@ -1856,3 +1856,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: perens-instant-user
+    src: Artforge/perens-instant-user
+    default: master
+    timeout: 60
+    private: true
