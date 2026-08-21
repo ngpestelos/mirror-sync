@@ -1216,3 +1216,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: docker-postgresql
+    src: orchardup/docker-postgresql
+    default: master
+    timeout: 60
+    private: true
