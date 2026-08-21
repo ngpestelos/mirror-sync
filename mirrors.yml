@@ -1826,3 +1826,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: paper_trail
+    src: paper-trail-gem/paper_trail
+    default: master
+    timeout: 60
+    private: true
