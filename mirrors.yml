@@ -1281,3 +1281,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: doorkeeper-provider-app
+    src: doorkeeper-gem/doorkeeper-provider-app
+    default: master
+    timeout: 60
+    private: true
