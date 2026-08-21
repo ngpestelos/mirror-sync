@@ -1516,3 +1516,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: go-dockerclient
+    src: fsouza/go-dockerclient
+    default: main
+    timeout: 60
+    private: true
