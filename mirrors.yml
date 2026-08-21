@@ -2251,3 +2251,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: syslog
+    src: ziutek/syslog
+    default: master
+    timeout: 60
+    private: true
