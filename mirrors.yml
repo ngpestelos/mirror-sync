@@ -2606,3 +2606,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: design-for-developers-starter-kit
+    src: thoughtbot/design-for-developers-starter-kit
+    default: master
+    timeout: 60
+    private: true
