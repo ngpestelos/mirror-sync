@@ -1456,3 +1456,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: Front-end-Developer-Interview-Questions
+    src: h5bp/Front-end-Developer-Interview-Questions
+    default: main
+    timeout: 60
+    private: true
