@@ -1536,3 +1536,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: Golang-Regex-Tutorial
+    src: StefanSchroeder/Golang-Regex-Tutorial
+    default: master
+    timeout: 60
+    private: true
