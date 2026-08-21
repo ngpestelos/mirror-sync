@@ -2521,3 +2521,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: acts_as_eav_model
+    src: g5search/acts_as_eav_model
+    default: master
+    timeout: 60
+    private: true
