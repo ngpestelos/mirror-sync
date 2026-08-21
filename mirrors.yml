@@ -1591,3 +1591,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: heroku-buildpack-ruby-sqlite
+    src: c4mprod/heroku-buildpack-ruby-sqlite
+    default: master
+    timeout: 60
+    private: true
