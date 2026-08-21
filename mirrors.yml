@@ -2706,3 +2706,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: shipyard
+    src: ehazlett/shipyard
+    default: master
+    timeout: 60
+    private: true
