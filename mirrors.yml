@@ -1311,3 +1311,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: email-spec
+    src: email-spec/email-spec
+    default: main
+    timeout: 60
+    private: true
