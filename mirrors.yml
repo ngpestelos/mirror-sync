@@ -1141,3 +1141,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: base
+    src: johanneswuerbach/base
+    default: master
+    timeout: 60
+    private: true
