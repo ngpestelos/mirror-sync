@@ -1146,3 +1146,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: deisctl
+    src: gabrtv/deisctl
+    default: master
+    timeout: 60
+    private: true
