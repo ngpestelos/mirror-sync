@@ -1871,3 +1871,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: philippine_senators
+    src: rstacruz/philippine_senators
+    default: master
+    timeout: 60
+    private: true
