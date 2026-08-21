@@ -2696,3 +2696,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: fleet
+    src: coreos/fleet
+    default: master
+    timeout: 60
+    private: true
