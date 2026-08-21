@@ -2196,3 +2196,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: soa_auth
+    src: jjasonclark/soa_auth
+    default: master
+    timeout: 60
+    private: true
