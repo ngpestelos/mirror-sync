@@ -1916,3 +1916,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: racc
+    src: ruby/racc
+    default: master
+    timeout: 60
+    private: true
