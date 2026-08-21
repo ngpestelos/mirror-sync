@@ -1936,3 +1936,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: rails-devise-pundit
+    src: RailsApps/rails-devise-pundit
+    default: master
+    timeout: 60
+    private: true
