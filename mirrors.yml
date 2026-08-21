@@ -1791,3 +1791,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: net-ssh
+    src: net-ssh/net-ssh
+    default: master
+    timeout: 60
+    private: true
