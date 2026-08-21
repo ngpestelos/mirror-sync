@@ -2321,3 +2321,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: vagrant-digitalocean
+    src: devopsgroup-io/vagrant-digitalocean
+    default: master
+    timeout: 60
+    private: true
