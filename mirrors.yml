@@ -2371,3 +2371,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: webmock
+    src: bblimke/webmock
+    default: master
+    timeout: 60
+    private: true
