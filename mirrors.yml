@@ -2216,3 +2216,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: sprockets
+    src: rails/sprockets
+    default: main
+    timeout: 60
+    private: true
