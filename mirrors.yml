@@ -1876,3 +1876,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: pifs
+    src: philipl/pifs
+    default: master
+    timeout: 60
+    private: true
