@@ -2841,3 +2841,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: syncthing
+    src: syncthing/syncthing
+    default: main
+    timeout: 60
+    private: true
