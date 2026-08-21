@@ -1356,3 +1356,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: cli
+    src: exercism/cli
+    default: main
+    timeout: 60
+    private: true
