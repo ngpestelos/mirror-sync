@@ -2486,3 +2486,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: vagrantpress
+    src: vagrantpress/vagrantpress
+    default: master
+    timeout: 60
+    private: true
