@@ -1811,3 +1811,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: omniauth-jawbone
+    src: ruthienachmany/omniauth-jawbone
+    default: master
+    timeout: 60
+    private: true
