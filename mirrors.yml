@@ -2561,3 +2561,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: rack-protection
+    src: sinatra/rack-protection
+    default: master
+    timeout: 60
+    private: true
