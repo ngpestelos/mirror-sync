@@ -1336,3 +1336,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: erubis
+    src: kwatch/erubis
+    default: master
+    timeout: 60
+    private: true
