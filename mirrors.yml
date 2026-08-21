@@ -2661,3 +2661,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: legacy-cli
+    src: heroku/legacy-cli
+    default: master
+    timeout: 60
+    private: true
