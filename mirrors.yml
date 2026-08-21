@@ -2771,3 +2771,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: distribution
+    src: distribution/distribution
+    default: main
+    timeout: 60
+    private: true
