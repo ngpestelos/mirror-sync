@@ -1081,3 +1081,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: chef-rethinkdb
+    src: AVVSDevelopment/chef-rethinkdb
+    default: master
+    timeout: 60
+    private: true
