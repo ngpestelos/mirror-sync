@@ -2026,3 +2026,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: remote_syslog2
+    src: papertrail/remote_syslog2
+    default: master
+    timeout: 60
+    private: true
