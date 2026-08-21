@@ -1931,3 +1931,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: rails-bootstrap
+    src: RailsApps/rails-bootstrap
+    default: master
+    timeout: 60
+    private: true
