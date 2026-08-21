@@ -2536,3 +2536,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: build-essential
+    src: chef-boneyard/build-essential
+    default: master
+    timeout: 60
+    private: true
