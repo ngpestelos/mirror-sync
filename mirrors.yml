@@ -2171,3 +2171,8 @@ mirrors:
     default: main
     timeout: 60
     private: true
+  - dest: simple_form
+    src: heartcombo/simple_form
+    default: main
+    timeout: 60
+    private: true
