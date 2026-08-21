@@ -2726,3 +2726,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: rkt
+    src: rkt/rkt
+    default: master
+    timeout: 60
+    private: true
