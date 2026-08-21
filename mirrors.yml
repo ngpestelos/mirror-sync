@@ -2016,3 +2016,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: redis-namespace
+    src: resque/redis-namespace
+    default: master
+    timeout: 60
+    private: true
