@@ -1271,3 +1271,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: dokku-pg-plugin
+    src: Kloadut/dokku-pg-plugin
+    default: master
+    timeout: 60
+    private: true
