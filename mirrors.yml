@@ -2551,3 +2551,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: docker-volumes
+    src: cpuguy83/docker-volumes
+    default: master
+    timeout: 60
+    private: true
