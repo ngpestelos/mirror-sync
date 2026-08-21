@@ -1051,3 +1051,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: capybara
+    src: teamcapybara/capybara
+    default: master
+    timeout: 60
+    private: true
