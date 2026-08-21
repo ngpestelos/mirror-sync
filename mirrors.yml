@@ -1911,3 +1911,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: pups
+    src: discourse/pups
+    default: main
+    timeout: 60
+    private: true
