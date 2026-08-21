@@ -2831,3 +2831,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: playframework
+    src: playframework/playframework
+    default: main
+    timeout: 60
+    private: true
