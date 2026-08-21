@@ -1166,3 +1166,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: destroy-all-software-extras
+    src: garybernhardt/destroy-all-software-extras
+    default: master
+    timeout: 60
+    private: true
