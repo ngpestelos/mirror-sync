@@ -2316,3 +2316,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: uby_interpreter
+    src: zenspider/uby_interpreter
+    default: master
+    timeout: 60
+    private: true
