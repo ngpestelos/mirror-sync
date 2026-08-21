@@ -1686,3 +1686,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: legato
+    src: tpitale/legato
+    default: master
+    timeout: 60
+    private: true
