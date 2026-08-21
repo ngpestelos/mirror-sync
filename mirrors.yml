@@ -2396,3 +2396,8 @@ mirrors:
     default: master
     timeout: 60
     private: true
+  - dest: thoughtbot-guides
+    src: thoughtbot/guides
+    default: main
+    timeout: 60
+    private: true
