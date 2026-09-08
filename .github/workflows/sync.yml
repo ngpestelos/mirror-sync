@@ -18,7 +18,7 @@ jobs:
   matrix:
     runs-on: ubuntu-latest
     outputs:
-      include: ${{ steps.set.outputs.include }}
+      batches: ${{ steps.set.outputs.batches }}
     steps:
       - uses: actions/checkout@v4
       - id: set
@@ -26,7 +26,11 @@ jobs:
           ONLY: ${{ github.event.inputs.dest || '' }}
         run: |
           python3 - << 'PY'
-          import json, os, pathlib, sys
+          import hashlib, json, os, pathlib, sys
+
+          HEAVY_MIN = 90
+          NORMAL_BATCH_COUNT = 3
+
           only = os.environ.get("ONLY", "").strip()
           text = pathlib.Path("mirrors.yml").read_text()
           rows = []
@@ -45,49 +49,74 @@ jobs:
                   cur["timeout"] = int(s.split(":", 1)[1].strip())
           if cur:
               rows.append(cur)
+
+          # Default applied before the tier split (matches the original
+          # emit-time default; a row missing timeout: must not KeyError here).
+          for r in rows:
+              r.setdefault("timeout", 60)
+
+          heavy_rows = [r for r in rows if r["timeout"] >= HEAVY_MIN]
+          normal_rows = [r for r in rows if r["timeout"] < HEAVY_MIN]
+
+          # Keep the divisor fixed so locks survive catalog growth and ONLY
+          # filtering. Changing it requires draining runs using the old divisor.
+          num_normal_batches = NORMAL_BATCH_COUNT if normal_rows else 0
+
+          def normal_batch_id(dest):
+              h = int(hashlib.sha256(dest.encode()).hexdigest(), 16)
+              return h % num_normal_batches
+
           if only:
-              rows = [r for r in rows if r["dest"] == only]
-              if not rows:
-                  print(f"FAIL dest not in mirrors.yml: {only}", file=sys.stderr)
-                  sys.exit(1)
               if not all(c.isalnum() or c in "-_." for c in only):
                   print("FAIL dest name not allowlisted charset", file=sys.stderr)
                   sys.exit(1)
-          include = [
-              {
+              selected = [r for r in rows if r["dest"] == only]
+              if not selected:
+                  print(f"FAIL dest not in mirrors.yml: {only}", file=sys.stderr)
+                  sys.exit(1)
+          else:
+              selected = rows
+
+          batches = {}
+          for r in selected:
+              entry = {
                   "dest": r["dest"],
                   "src": r["src"],
                   "default": r["default"],
-                  "timeout": r.get("timeout", 60),
+                  "timeout": r["timeout"],
               }
-              for r in rows
-          ]
+              if r["timeout"] >= HEAVY_MIN:
+                  bid = f"heavy-{r['dest']}"
+              else:
+                  bid = f"normal-{normal_batch_id(r['dest'])}"
+              batches.setdefault(bid, []).append(entry)
+
+          batch_list = [{"id": bid, "entries": entries} for bid, entries in sorted(batches.items())]
+
           with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as fh:
-              fh.write("include=" + json.dumps(include, separators=(",", ":")) + "\n")
-          print(f"jobs={len(include)}")
+              fh.write("batches=" + json.dumps(batch_list, separators=(",", ":")) + "\n")
+          print(f"jobs={len(selected)} batches={len(batch_list)} normal_batches={num_normal_batches} heavy={len(heavy_rows)} normal={len(normal_rows)}")
           PY
 
   sync:
     needs: matrix
-    if: needs.matrix.outputs.include != '[]'
+    if: needs.matrix.outputs.batches != '[]'
     runs-on: ubuntu-latest
-    timeout-minutes: ${{ matrix.timeout }}
+    timeout-minutes: ${{ startsWith(matrix.batch.id, 'heavy-') && matrix.batch.entries[0].timeout || 300 }}
     strategy:
       fail-fast: false
       max-parallel: 8
       matrix:
-        include: ${{ fromJSON(needs.matrix.outputs.include) }}
+        batch: ${{ fromJSON(needs.matrix.outputs.batches) }}
     concurrency:
-      group: sync-dest-${{ matrix.dest }}
-      cancel-in-progress: true
+      group: sync-batch-${{ matrix.batch.id }}
+      cancel-in-progress: false
+      queue: max
     env:
       MIRROR_APP_ID: ${{ secrets.MIRROR_APP_ID }}
       MIRROR_APP_PRIVATE_KEY: ${{ secrets.MIRROR_APP_PRIVATE_KEY }}
       MIRROR_PUSH_TOKEN: ${{ secrets.MIRROR_PUSH_TOKEN }}
       DEST_OWNER: ngpestelos-mirrors
-      DEST: ${{ matrix.dest }}
-      SRC: ${{ matrix.src }}
-      DEF: ${{ matrix.default }}
     steps:
       - uses: actions/checkout@v4
       - name: App credentials present
@@ -96,5 +125,7 @@ jobs:
             echo "FAIL MIRROR_APP_ID or MIRROR_APP_PRIVATE_KEY empty" >&2
             exit 1
           fi
-      - name: Sync ${{ matrix.dest }}
-        run: bash scripts/sync-one.sh
+      - name: Sync batch ${{ matrix.batch.id }}
+        env:
+          ENTRIES_JSON: ${{ toJSON(matrix.batch.entries) }}
+        run: bash scripts/sync-batch.sh

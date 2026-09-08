@@ -1,5 +1,5 @@
 # Generated from harvest 20260820. Default branch is UPSTREAM.
-# dests=166 generated=20260819T235859Z
+# dests=480 generated=20260819T235859Z (count corrected 20260825; append-only edits since harvest do not refresh this line — see mirror-sync PR for the 256-job-cap fix)
 mirrors:
   - dest: active_merchant
     src: activemerchant/active_merchant
