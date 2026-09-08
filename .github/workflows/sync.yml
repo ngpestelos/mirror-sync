@@ -26,10 +26,10 @@ jobs:
           ONLY: ${{ github.event.inputs.dest || '' }}
         run: |
           python3 - << 'PY'
-          import hashlib, json, math, os, pathlib, sys
+          import hashlib, json, os, pathlib, sys
 
           HEAVY_MIN = 90
-          NORMAL_BATCH_SIZE = 200
+          NORMAL_BATCH_COUNT = 3
 
           only = os.environ.get("ONLY", "").strip()
           text = pathlib.Path("mirrors.yml").read_text()
@@ -58,10 +58,9 @@ jobs:
           heavy_rows = [r for r in rows if r["timeout"] >= HEAVY_MIN]
           normal_rows = [r for r in rows if r["timeout"] < HEAVY_MIN]
 
-          # Computed from the FULL unfiltered list so a single-dest ONLY
-          # dispatch assigns the same batch id that dest would get in a
-          # full run (stable concurrency-group collision, not a race).
-          num_normal_batches = max(1, math.ceil(len(normal_rows) / NORMAL_BATCH_SIZE)) if normal_rows else 0
+          # Keep the divisor fixed so locks survive catalog growth and ONLY
+          # filtering. Changing it requires draining runs using the old divisor.
+          num_normal_batches = NORMAL_BATCH_COUNT if normal_rows else 0
 
           def normal_batch_id(dest):
               h = int(hashlib.sha256(dest.encode()).hexdigest(), 16)
